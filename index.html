@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOBIRU — Diagnostic de Maturité Digitale</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAABCGlDQ1BJQ0MgUHJvZmlsZQAAeJxjYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiBEAwSk4sLGHADoKpv1yBqL+viUYcLcKakFicD6Q9ArFIEtBxopAiQLZIOYWuA2EkQtg2IXV5SUAJkB4DYRSFBzkB2CpCtkY7ETkJiJxcUgdT3ANk2uTmlyQh3M/Ck5oUGA2kOIJZhKGYIYnBncAL5H6IkfxEDg8VXBgbmCQixpJkMDNtbGRgkbiHEVBYwMPC3MDBsO48QQ4RJQWJRIliIBYiZ0tIYGD4tZ2DgjWRgEL7AwMAVDQsIHG5TALvNnSEfCNMZchhSgSKeDHkMyQx6QJYRgwGDIYMZAKbWPz9HbOBQAAABg0lEQVR4nO2Uv6rCMBTGk7TpIg66OOlS4qirdNAH6OzgJuIoLt18g26CD+AjOAuCo4VKcVV0cikOLm6a9LtDuHLhol71LkJ/0yE5Od/5k4SQlJSUz4f+xYkxxhjTtlIKgLZN0wSglHorBcMwHq7c4UEFlFIAQoh6vV4oFHa73Xw+PxwOuqBOp7Pf76fTqXZ7NnXCGKOU+r6PHxyPx3a7TQgpFosA1uu1zuPp6KZpEkJ6vR6A7XbrOE42m202m6fTCUC1Ws3n81LKKIpeFNBNCIJASlmpVBzHmUwmnPN+vw9gOBxyzgGsVqsXBfSZKIoAcM5HoxGAbrebyWSCIHBd17ZtKeVyuXxLIAzDy+WSy+VqtRqAOI4bjYZlWeVyOQxDAIPBgHz38xWBzWYDoFQqEUI8z5NSAjifz3rg4/HYsix9F27GubXBGEuSpNVq2bbt+75SKkkSIYTrukKIOI5ns9lisXg68Tv8fl/X532HB8MxDINSKqW8RrwG/YdPIiUl5VP4AnZdv94wJCvwAAAAAElFTkSuQmCC">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAABCGlDQ1BJQ0MgUHJvZmlsZQAAeJxjYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiBEAwSk4sLGHADoKpv1yBqL+viUYcLcKakFicD6Q9ArFIEtBxopAiQLZIOYWuA2EkQtg2IXV5SUAJkB4DYRSFBzkB2CpCtkY7ETkJiJxcUgdT3ANk2uTmlyQh3M/Ck5oUGA2kOIJZhKGYIYnBncAL5H6IkfxEDg8VXBgbmCQixpJkMDNtbGRgkbiHEVBYwMPC3MDBsO48QQ4RJQWJRIliIBYiZ0tIYGD4tZ2DgjWRgEL7AwMAVDQsIHG5TALvNnSEfCNMZchhSgSKeDHkMyQx6QJYRgwGDIYMZAKbWPz9HbOBQAAABg0lEQVR4nO2Uv6rCMBTGk7TpIg66OOlS4qirdNAH6OzgJuIoLt18g26CD+AjOAuCo4VKcVV0cikOLm6a9LtDuHLhol71LkJ/0yE5Od/5k4SQlJSUz4f+xYkxxhjTtlIKgLZN0wSglHorBcMwHq7c4UEFlFIAQoh6vV4oFHa73Xw+PxwOuqBOp7Pf76fTqXZ7NnXCGKOU+r6PHxyPx3a7TQgpFosA1uu1zuPp6KZpEkJ6vR6A7XbrOE42m202m6fTCUC1Ws3n81LKKIpeFNBNCIJASlmpVBzHmUwmnPN+vw9gOBxyzgGsVqsXBfSZKIoAcM5HoxGAbrebyWSCIHBd17ZtKeVyuXxLIAzDy+WSy+VqtRqAOI4bjYZlWeVyOQxDAIPBgHz38xWBzWYDoFQqEUI8z5NSAjifz3rg4/HYsix9F27GubXBGEuSpNVq2bbt+75SKkkSIYTrukKIOI5ns9lisXg68Tv8fl/X532HB8MxDINSKqW8RrwG/YdPIiUl5VP4AnZdv94wJCvwAAAAAElFTkSuQmCC">
+<meta name="description" content="Évaluez la maturité digitale de votre PME en 5 minutes. Score sur 100, radar interactif et plan d'action personnalisé pour les entreprises béninoises et ouest-africaines.">
+<meta property="og:title" content="NOBIRU — Diagnostic de Maturité Digitale">
+<meta property="og:description" content="Évaluez la maturité digitale de votre PME en 10 minutes.">
+<meta property="og:type" content="website">
+
+<!-- Fonts -->
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&f[]=satoshi@300,400,500,600,700&display=swap" rel="stylesheet">
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>emailjs.init('gkQifsYyrvYfbQuhb');</script>
+
+<style>
+/* ============================================
+   BASE RESET
+   ============================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
+}
+body {
+  min-height: 100dvh;
+  line-height: 1.6;
+  font-family: var(--font-body, sans-serif);
+  font-size: var(--text-base);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+img, picture, video, canvas, svg { display: block; max-width: 100%; height: auto; }
+input, button, textarea, select { font: inherit; color: inherit; }
+h1, h2, h3, h4, h5, h6 { text-wrap: balance; line-height: 1.15; }
+p, li { text-wrap: pretty; max-width: 72ch; }
+::selection { background: oklch(from var(--color-primary) l c h / 0.25); color: var(--color-text); }
+:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; border-radius: 4px; }
+button { cursor: pointer; background: none; border: none; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+/* ============================================
+   DESIGN TOKENS
+   ============================================ */
+:root {
+  --text-xs:   clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --text-sm:   clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+  --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --text-lg:   clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+  --text-xl:   clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+  --text-2xl:  clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+
+  --space-1: .25rem; --space-2: .5rem; --space-3: .75rem; --space-4: 1rem;
+  --space-5: 1.25rem; --space-6: 1.5rem; --space-8: 2rem; --space-10: 2.5rem;
+  --space-12: 3rem; --space-16: 4rem; --space-20: 5rem;
+
+  --color-bg: #faf8f4;
+  --color-surface: #ffffff;
+  --color-surface-2: #f5f2ec;
+  --color-surface-offset: #ede9e0;
+  --color-divider: #d4cfc5;
+  --color-border: #c8c2b6;
+
+  --color-text: #2a2319;
+  --color-text-muted: #6b6358;
+  --color-text-faint: #a89f93;
+  --color-text-inverse: #faf8f4;
+
+  --color-primary: #0e7c6e;
+  --color-primary-hover: #0a5e53;
+  --color-primary-light: #e6f5f2;
+  --color-primary-highlight: #c4e6e0;
+
+  --color-accent: #d4940e;
+  --color-accent-hover: #b87e08;
+  --color-accent-light: #fdf3dc;
+
+  --color-success: #2d8639;
+  --color-success-light: #e8f5ea;
+  --color-warning: #c67014;
+  --color-warning-light: #fdf0e0;
+  --color-error: #c43030;
+  --color-error-light: #fdeaea;
+
+  --dim-strategy: #0e7c6e;
+  --dim-client: #d4940e;
+  --dim-operations: #2d8639;
+  --dim-technology: #2563eb;
+  --dim-data: #9333ea;
+  --dim-culture: #e05d14;
+  --dim-leadership: #c43060;
+
+  --radius-sm: .375rem; --radius-md: .5rem; --radius-lg: .75rem;
+  --radius-xl: 1rem; --radius-2xl: 1.5rem; --radius-full: 9999px;
+
+  --transition-fast: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  --shadow-sm: 0 1px 2px oklch(0.25 0.02 60 / 0.06);
+  --shadow-md: 0 4px 12px oklch(0.25 0.02 60 / 0.08);
+  --shadow-lg: 0 12px 32px oklch(0.25 0.02 60 / 0.12);
+
+  --content-narrow: 640px;
+  --content-default: 960px;
+  --content-wide: 1200px;
+
+  --font-display: 'Cabinet Grotesk', sans-serif;
+  --font-body: 'Satoshi', sans-serif;
+}
+
+[data-theme="dark"] {
+  --color-bg: #141210;
+  --color-surface: #1c1a17;
+  --color-surface-2: #242119;
+  --color-surface-offset: #1e1b16;
+  --color-divider: #2a2720;
+  --color-border: #3a362e;
+  --color-text: #e0ddd7;
+  --color-text-muted: #918b80;
+  --color-text-faint: #605b52;
+  --color-text-inverse: #1c1a17;
+  --color-primary: #3fb8a6;
+  --color-primary-hover: #2e9e8e;
+  --color-primary-light: #1a2f2b;
+  --color-primary-highlight: #24403a;
+  --color-accent: #f0b84a;
+  --color-accent-light: #2e2818;
+  --color-success: #5dba66;
+  --color-success-light: #1a2e1c;
+  --color-warning: #e09040;
+  --color-warning-light: #2e2418;
+  --color-error: #e06060;
+  --color-error-light: #2e1a1a;
+  --dim-strategy: #3fb8a6; --dim-client: #f0b84a; --dim-operations: #5dba66;
+  --dim-technology: #6096f0; --dim-data: #b06ef0; --dim-culture: #f08040; --dim-leadership: #e06080;
+  --shadow-sm: 0 1px 2px oklch(0 0 0 / 0.2);
+  --shadow-md: 0 4px 12px oklch(0 0 0 / 0.3);
+  --shadow-lg: 0 12px 32px oklch(0 0 0 / 0.4);
+}
+
+/* ============================================
+   LAYOUT
+   ============================================ */
+.container { max-width: var(--content-default); margin-inline: auto; padding-inline: var(--space-4); }
+.container--wide { max-width: var(--content-wide); margin-inline: auto; padding-inline: var(--space-4); }
+.container--narrow { max-width: var(--content-narrow); margin-inline: auto; padding-inline: var(--space-4); }
+
+/* ============================================
+   VIEWS
+   ============================================ */
+.view { display: none; }
+.view.active { display: block; }
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.btn {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  padding: var(--space-3) var(--space-5); border-radius: var(--radius-lg);
+  font-size: var(--text-sm); font-weight: 600; border: 1.5px solid transparent;
+  transition: all var(--transition-fast); text-decoration: none;
+}
+.btn--primary {
+  background: var(--color-primary); color: white; border-color: var(--color-primary);
+}
+.btn--primary:hover { background: var(--color-primary-hover); border-color: var(--color-primary-hover); }
+.btn--accent {
+  background: var(--color-accent); color: white; border-color: var(--color-accent);
+}
+.btn--accent:hover { background: var(--color-accent-hover); }
+.btn--ghost {
+  color: var(--color-text-muted); border-color: var(--color-border);
+}
+.btn--ghost:hover { background: var(--color-surface-2); color: var(--color-text); }
+.btn--outline {
+  color: var(--color-text); border-color: var(--color-border); background: transparent;
+}
+.btn--outline:hover { background: var(--color-surface-2); }
+.btn--large { padding: var(--space-4) var(--space-8); font-size: var(--text-base); }
+.btn:disabled { opacity: .5; cursor: not-allowed; }
+
+/* ============================================
+   HEADER
+   ============================================ */
+.site-header {
+  position: sticky; top: 0; z-index: 100;
+  background: oklch(from var(--color-bg) l c h / 0.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-divider);
+  padding: var(--space-3) 0;
+}
+.site-header .container { display: flex; align-items: center; justify-content: space-between; }
+.logo { display: flex; align-items: center; gap: var(--space-2); text-decoration: none; color: var(--color-text); }
+.logo-icon { width: 36px; height: 36px; flex-shrink: 0; }
+.logo-text { font-family: var(--font-display); font-size: 1.2rem; font-weight: 800; letter-spacing: -0.03em; }
+.logo-text span { color: var(--color-primary); }
+.header-actions { display: flex; gap: var(--space-2); }
+.btn--icon { padding: var(--space-2); width: 36px; height: 36px; border-radius: var(--radius-md); }
+
+/* ============================================
+   HERO
+   ============================================ */
+.hero {
+  padding: clamp(var(--space-10), 8vw, var(--space-20)) 0;
+}
+.hero-grid {
+  display: grid; grid-template-columns: 1fr; gap: var(--space-10); align-items: center;
+}
+@media (min-width: 768px) {
+  .hero-grid { grid-template-columns: 1fr 1fr; }
+}
+.hero-tagline {
+  display: inline-block; padding: var(--space-1) var(--space-3);
+  background: var(--color-primary-light); color: var(--color-primary);
+  font-size: var(--text-xs); font-weight: 700; text-transform: uppercase;
+  letter-spacing: .08em; border-radius: var(--radius-full); margin-bottom: var(--space-4);
+}
+.hero-content h1 {
+  font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 800;
+  letter-spacing: -.03em; margin-bottom: var(--space-4); line-height: 1.1;
+}
+.hero-content h1 em { font-style: normal; color: var(--color-primary); }
+.hero-desc { font-size: var(--text-base); color: var(--color-text-muted); max-width: 52ch; margin-bottom: var(--space-6); }
+.hero-cta-group { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; }
+.hero-stats { display: flex; gap: var(--space-6); margin-top: var(--space-8); padding-top: var(--space-6); border-top: 1px solid var(--color-divider); }
+.hero-stat-value { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 800; }
+.hero-stat-label { font-size: var(--text-xs); color: var(--color-text-muted); text-transform: uppercase; letter-spacing: .06em; }
+.hero-visual { display: flex; align-items: center; justify-content: center; }
+.hero-radar-wrapper {
+  width: 100%; max-width: 420px; aspect-ratio: 1;
+  background: var(--color-surface); border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-lg); padding: var(--space-6); position: relative; overflow: hidden;
+}
+.hero-radar-wrapper::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, var(--color-primary-light), transparent 60%);
+  pointer-events: none;
+}
+
+/* ============================================
+   HOW IT WORKS
+   ============================================ */
+.how-section { padding: clamp(var(--space-10), 6vw, var(--space-20)) 0; background: var(--color-surface-2); }
+.section-title { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 700; text-align: center; margin-bottom: var(--space-3); letter-spacing: -.02em; }
+.section-subtitle { font-size: var(--text-base); color: var(--color-text-muted); text-align: center; max-width: 56ch; margin: 0 auto var(--space-10); }
+.steps-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-6); }
+@media (min-width: 640px) { .steps-grid { grid-template-columns: repeat(3, 1fr); } }
+.step-card { background: var(--color-surface); border-radius: var(--radius-xl); padding: var(--space-6); box-shadow: var(--shadow-sm); }
+.step-number { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: var(--radius-full); background: var(--color-primary); color: white; font-family: var(--font-display); font-weight: 700; margin-bottom: var(--space-4); }
+.step-card h3 { font-family: var(--font-display); font-size: var(--text-lg); font-weight: 700; margin-bottom: var(--space-2); }
+.step-card p { font-size: var(--text-sm); color: var(--color-text-muted); }
+
+/* ============================================
+   DIMENSIONS
+   ============================================ */
+.dimensions-section { padding: clamp(var(--space-10), 6vw, var(--space-20)) 0; }
+.dims-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-4); }
+@media (min-width: 640px) { .dims-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .dims-grid { grid-template-columns: repeat(3, 1fr); } .dims-grid .dim-card:last-child { grid-column: 2; } }
+.dim-card { display: flex; gap: var(--space-4); padding: var(--space-5); border-radius: var(--radius-lg); background: var(--color-surface); border: 1px solid oklch(from var(--color-text) l c h / 0.06); transition: box-shadow var(--transition-smooth), transform var(--transition-smooth); }
+.dim-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.dim-icon { width: 40px; height: 40px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.2rem; }
+.dim-card h3 { font-family: var(--font-display); font-size: var(--text-sm); font-weight: 700; margin-bottom: var(--space-1); }
+.dim-card p { font-size: var(--text-xs); color: var(--color-text-muted); line-height: 1.5; }
+
+/* ============================================
+   QUIZ VIEW
+   ============================================ */
+.quiz-view { padding: var(--space-8) 0 var(--space-16); min-height: calc(100dvh - 64px); }
+.quiz-progress-bar { width: 100%; height: 4px; background: var(--color-surface-offset); border-radius: var(--radius-full); margin-bottom: var(--space-8); overflow: hidden; }
+.quiz-progress-fill { height: 100%; background: var(--color-primary); border-radius: var(--radius-full); transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+.quiz-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-6); flex-wrap: wrap; gap: var(--space-3); }
+.quiz-dimension-badge { display: inline-flex; align-items: center; gap: var(--space-2); padding: var(--space-1) var(--space-3); border-radius: var(--radius-full); font-size: var(--text-xs); font-weight: 600; text-transform: uppercase; letter-spacing: .06em; background: var(--color-primary-light); color: var(--color-primary); }
+.quiz-counter { font-size: var(--text-sm); color: var(--color-text-muted); font-variant-numeric: tabular-nums; }
+.quiz-question-card { background: var(--color-surface); border-radius: var(--radius-2xl); padding: clamp(var(--space-6), 4vw, var(--space-10)); box-shadow: var(--shadow-md); margin-bottom: var(--space-6); transition: border-color var(--transition-fast), box-shadow var(--transition-fast); }
+.quiz-question-text { font-family: var(--font-display); font-size: var(--text-lg); font-weight: 600; margin-bottom: var(--space-6); line-height: 1.35; }
+.quiz-options { display: flex; flex-direction: column; gap: var(--space-3); }
+.quiz-option { display: flex; align-items: center; gap: var(--space-4); padding: var(--space-4) var(--space-5); border-radius: var(--radius-lg); border: 1.5px solid oklch(from var(--color-text) l c h / 0.1); background: var(--color-bg); cursor: pointer; transition: all var(--transition-fast); min-height: 52px; text-align: left; width: 100%; }
+.quiz-option:hover { border-color: var(--color-primary); background: var(--color-primary-light); }
+.quiz-option.selected { border-color: var(--color-primary); background: var(--color-primary-light); box-shadow: 0 0 0 1px var(--color-primary); }
+.quiz-option-radio { width: 20px; height: 20px; border-radius: var(--radius-full); border: 2px solid var(--color-border); flex-shrink: 0; position: relative; transition: all var(--transition-fast); }
+.quiz-option.selected .quiz-option-radio { border-color: var(--color-primary); background: var(--color-primary); }
+.quiz-option.selected .quiz-option-radio::after { content: ''; position: absolute; inset: 4px; background: white; border-radius: var(--radius-full); }
+.quiz-option-label { font-size: var(--text-sm); font-weight: 500; display: block; }
+.quiz-nav { display: flex; justify-content: space-between; align-items: center; gap: var(--space-4); }
+
+/* ============================================
+   COMPANY FORM
+   ============================================ */
+.company-form { background: var(--color-surface); border-radius: var(--radius-2xl); padding: clamp(var(--space-6), 4vw, var(--space-10)); box-shadow: var(--shadow-md); }
+.company-form h2 { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 700; margin-bottom: var(--space-2); }
+.company-form > p { color: var(--color-text-muted); font-size: var(--text-sm); margin-bottom: var(--space-6); }
+.form-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-4); }
+@media (min-width: 640px) { .form-grid { grid-template-columns: 1fr 1fr; } }
+.form-group { display: flex; flex-direction: column; gap: var(--space-1); }
+.form-group.full-width { grid-column: 1 / -1; }
+.form-label { font-size: var(--text-sm); font-weight: 500; }
+.form-input, .form-select { padding: var(--space-3) var(--space-4); border: 1.5px solid oklch(from var(--color-text) l c h / 0.12); border-radius: var(--radius-md); background: var(--color-bg); font-size: var(--text-sm); min-height: 44px; width: 100%; }
+.form-input:focus, .form-select:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 3px var(--color-primary-highlight); }
+.form-actions { margin-top: var(--space-6); display: flex; justify-content: flex-end; }
+
+/* ============================================
+   EMAIL CAPTURE GATE
+   ============================================ */
+.email-gate { background: var(--color-surface); border-radius: var(--radius-2xl); padding: clamp(var(--space-6), 4vw, var(--space-10)); box-shadow: var(--shadow-lg); text-align: center; border: 2px solid var(--color-primary-light); }
+.email-gate-icon { font-size: 3rem; margin-bottom: var(--space-4); }
+.email-gate h2 { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 700; margin-bottom: var(--space-3); }
+.email-gate p { font-size: var(--text-sm); color: var(--color-text-muted); max-width: 44ch; margin: 0 auto var(--space-6); }
+.email-gate-form { display: flex; flex-direction: column; gap: var(--space-3); max-width: 400px; margin: 0 auto; }
+@media (min-width: 480px) { .email-gate-form { flex-direction: row; } }
+.email-gate-form .form-input { flex: 1; }
+.email-gate-promise { font-size: var(--text-xs); color: var(--color-text-faint); margin-top: var(--space-3); display: flex; align-items: center; justify-content: center; gap: var(--space-1); }
+
+/* ============================================
+   RESULTS
+   ============================================ */
+.results-view { padding: var(--space-8) 0 var(--space-16); }
+.results-hero { text-align: center; margin-bottom: var(--space-10); }
+.results-hero h1 { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 700; margin-bottom: var(--space-2); }
+.results-company-name { font-size: var(--text-base); color: var(--color-text-muted); margin-bottom: var(--space-6); }
+.score-circle-container { display: flex; justify-content: center; margin-bottom: var(--space-6); }
+.score-circle { width: 180px; height: 180px; position: relative; }
+.score-circle svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.score-circle-bg { fill: none; stroke: var(--color-surface-offset); stroke-width: 10; }
+.score-circle-fill { fill: none; stroke-width: 10; stroke-linecap: round; transition: stroke-dashoffset 1.5s cubic-bezier(0.16, 1, 0.3, 1); }
+.score-circle-text { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.score-value { font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 800; line-height: 1; font-variant-numeric: tabular-nums; }
+.score-max { font-size: var(--text-xs); color: var(--color-text-muted); }
+.maturity-badge { display: inline-flex; align-items: center; gap: var(--space-2); padding: var(--space-2) var(--space-4); border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: 600; }
+.results-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-6); margin-bottom: var(--space-10); }
+@media (min-width: 768px) { .results-grid { grid-template-columns: 1fr 1fr; } }
+.results-card { background: var(--color-surface); border-radius: var(--radius-xl); padding: var(--space-6); box-shadow: var(--shadow-sm); }
+.results-card h3 { font-family: var(--font-display); font-size: var(--text-lg); font-weight: 700; margin-bottom: var(--space-4); }
+.results-card--full { grid-column: 1 / -1; }
+@media (max-width: 600px) {
+  .results-hero h1 { font-size: var(--text-lg); }
+  .score-circle { width: 140px; height: 140px; }
+  .results-actions { flex-direction: column; align-items: center; }
+  .results-actions .btn { width: 100%; justify-content: center; }
+}
+.radar-container { width: 100%; max-width: 420px; margin: 0 auto; aspect-ratio: 1; }
+@media (max-width: 480px) {
+  .radar-container { max-width: 280px; }
+  .results-grid { grid-template-columns: 1fr; }
+}
+.dim-scores-list { display: flex; flex-direction: column; gap: var(--space-3); }
+.dim-score-item { display: flex; flex-direction: column; gap: 6px; }
+.dim-score-header { display: flex; justify-content: space-between; align-items: center; gap: var(--space-2); }
+.dim-score-name { font-size: var(--text-sm); font-weight: 600; display: flex; align-items: center; gap: 6px; }
+.dim-score-value { font-size: var(--text-sm); font-weight: 700; font-variant-numeric: tabular-nums; }
+
+/* RPG Stat Bar */
+.rpg-bar-wrap { position: relative; height: 14px; background: oklch(from var(--color-text) l c h / 0.08); border-radius: 3px; overflow: hidden; }
+.rpg-bar-fill { height: 100%; border-radius: 3px; transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1); position: relative; }
+.rpg-bar-fill::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 40%; background: rgba(255,255,255,0.25); border-radius: 3px 3px 0 0; }
+.rpg-bar-segments { position: absolute; inset: 0; display: flex; }
+.rpg-bar-segment { flex: 1; border-right: 1px solid oklch(from var(--color-text) l c h / 0.12); }
+.rpg-bar-segment:last-child { border-right: none; }
+
+/* Rank badge */
+.rpg-rank { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 4px; font-size: 11px; font-weight: 800; letter-spacing: -0.02em; flex-shrink: 0; }
+.rank-d { background: #3a3a3a; color: #888; }
+.rank-c { background: #1a3a1a; color: #4caf50; }
+.rank-b { background: #1a2a3a; color: #42a5f5; }
+.rank-a { background: #2a1a3a; color: #ce93d8; }
+.rank-s { background: linear-gradient(135deg, #3a2800, #5a3a00); color: #ffd700; border: 1px solid #ffd70055; }
+.rank-ss { background: linear-gradient(135deg, #3a0000, #5a1a00); color: #ff6b35; border: 1px solid #ff6b3555; font-size: 9px; }
+.reco-list { display: flex; flex-direction: column; gap: var(--space-4); }
+.reco-item { display: flex; gap: var(--space-3); padding: var(--space-4); border-radius: var(--radius-lg); background: var(--color-bg); }
+.reco-priority { width: 28px; height: 28px; border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; font-size: var(--text-xs); font-weight: 700; flex-shrink: 0; color: white; }
+.reco-priority.high { background: var(--color-error); }
+.reco-priority.medium { background: var(--color-warning); }
+.reco-priority.low { background: var(--color-success); }
+.reco-content h4 { font-size: var(--text-sm); font-weight: 600; margin-bottom: var(--space-1); }
+.reco-content p { font-size: var(--text-xs); color: var(--color-text-muted); line-height: 1.5; }
+.badges-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(120px, 100%), 1fr)); gap: var(--space-3); }
+.badge-card { display: flex; flex-direction: column; align-items: center; text-align: center; padding: var(--space-4) var(--space-3); border-radius: var(--radius-lg); background: var(--color-bg); gap: var(--space-2); transition: transform var(--transition-smooth); }
+.badge-card:hover { transform: scale(1.03); }
+.badge-card.locked { opacity: .4; filter: grayscale(1); }
+.badge-icon { font-size: 2rem; line-height: 1; }
+.badge-label { font-size: var(--text-xs); font-weight: 600; }
+.badge-desc { font-size: .7rem; color: var(--color-text-faint); line-height: 1.3; }
+.results-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-3); margin-top: var(--space-8); }
+
+/* CTA BAND */
+.cta-band { background: var(--color-primary); color: white; padding: var(--space-10) 0; text-align: center; margin-top: var(--space-10); border-radius: var(--radius-2xl); }
+.cta-band h2 { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 700; margin-bottom: var(--space-3); color: white; }
+.cta-band p { color: oklch(from white l c h / 0.8); margin: 0 auto var(--space-6); }
+.cta-band .btn { background: white; color: var(--color-primary); border-color: white; }
+.cta-band .btn:hover { background: var(--color-primary-light); }
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.site-footer { padding: var(--space-8) 0; background: var(--color-surface); }
+.footer-top { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: var(--space-6); padding-bottom: var(--space-6); }
+.footer-brand p { font-size: var(--text-xs); color: var(--color-text-faint); max-width: 220px; line-height: 1.7; margin: var(--space-2) 0 0; }
+.footer-contact { display: flex; flex-direction: column; gap: var(--space-2); align-items: flex-end; }
+.footer-contact p { font-size: var(--text-sm); color: var(--color-text-muted); margin: 0; }
+.footer-icons { display: flex; gap: var(--space-2); align-items: center; }
+.footer-icon { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: var(--radius-full); text-decoration: none; transition: opacity var(--transition-fast); }
+.footer-icon:hover { opacity: 0.8; }
+.footer-icon--primary { background: var(--color-primary); }
+.footer-icon--secondary { background: var(--color-surface-2); border: 1px solid var(--color-divider); }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-2); padding-top: var(--space-4); }
+.footer-bottom p { font-size: var(--text-xs); color: var(--color-text-faint); margin: 0; }
+.footer-bottom a { font-size: var(--text-xs); color: var(--color-text-faint); text-decoration: none; transition: color var(--transition-fast); }
+.footer-bottom a:hover { color: var(--color-primary); }
+@media (max-width: 600px) {
+  .footer-top { flex-direction: column; align-items: flex-start; gap: var(--space-4); }
+  .footer-contact { align-items: flex-start; width: 100%; }
+  .footer-contact p { font-size: var(--text-xs); }
+  .footer-icons { flex-wrap: wrap; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: var(--space-1); }
+  .footer-brand p { max-width: 100%; }
+}
+
+/* ============================================
+   SCROLL REVEAL
+   ============================================ */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s cubic-bezier(0.16,1,0.3,1), transform .6s cubic-bezier(0.16,1,0.3,1); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.dim-icon svg { display: block; }
+.dim-score-name svg, .reco-content h4 svg { display: inline; vertical-align: middle; margin-right: 4px; }
+.quiz-dimension-badge svg { display: inline; vertical-align: middle; margin-right: 4px; }
+
+/* ============================================
+   UTILITIES
+   ============================================ */
+.text-center { text-align: center; }
+.mt-2 { margin-top: var(--space-2); }
+.mt-4 { margin-top: var(--space-4); }
+.mt-6 { margin-top: var(--space-6); }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container">
+    <a href="#" class="logo" onclick="showView('landing'); return false;">
+      <img class="logo-icon" src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAVCBDgDASIAAhEBAxEB/8QAHQABAAICAwEBAAAAAAAAAAAAAAgJBgcCBAUBA//EAFMQAQABAwMBBAMJCwgHBwUBAAABAgMEBQYRBxIhMUEIUWETFCIyNnF0gbMJIzU3QlJ1gpGhshUzQ1NicpKxFiRjc6KjwSU0RJPD0dIXR4OU0/H/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8AhkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA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AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB//2Q==" alt="NOBIRU logo" style="width:36px;height:36px;border-radius:6px;">
+      <span class="logo-text">NOBIRU<span>.</span></span>
+    </a>
+    <div class="header-actions">
+      <button class="btn btn--ghost btn--icon" onclick="toggleTheme()" aria-label="Changer le thème">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ====== VIEW: LANDING ====== -->
+<div id="view-landing" class="view active">
+  <section class="hero">
+    <div class="container--wide">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <span class="hero-tagline">Gratuit — 5 minutes</span>
+          <h1>Mesurez la <em>maturité digitale</em> de votre entreprise</h1>
+          <p class="hero-desc">
+            Répondez à 21 questions simples. Obtenez un score sur 100, un diagnostic détaillé par dimension et un plan d'action adapté aux PME béninoises et ouest-africaines.
+          </p>
+          <div class="hero-cta-group">
+            <button class="btn btn--primary btn--large" onclick="showView('form')">
+              Lancer le diagnostic
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+            <button class="btn btn--outline" onclick="document.getElementById('how-section').scrollIntoView({behavior:'smooth'})">Comment ça marche</button>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <div class="hero-stat-value">7</div>
+              <div class="hero-stat-label">Dimensions</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-value">21</div>
+              <div class="hero-stat-label">Questions</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-value">/100</div>
+              <div class="hero-stat-label">Score</div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-radar-wrapper">
+            <canvas id="hero-radar-canvas"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how-section" id="how-section">
+    <div class="container">
+      <h2 class="section-title reveal">Comment ça marche</h2>
+      <p class="section-subtitle reveal">Un processus simple en trois étapes pour savoir où en est votre entreprise.</p>
+      <div class="steps-grid">
+        <div class="step-card reveal">
+          <div class="step-number">1</div>
+          <h3>Vos informations</h3>
+          <p>Renseignez le nom de votre entreprise, votre secteur et le nombre d'employés pour un diagnostic adapté.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">2</div>
+          <h3>21 questions simples</h3>
+          <p>Évaluez 7 dimensions : stratégie, clients, processus, technologie, données, culture et leadership.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number">3</div>
+          <h3>Votre diagnostic</h3>
+          <p>Recevez un score global, un radar interactif, des badges de maturité et vos 3 priorités d'amélioration.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dimensions-section">
+    <div class="container">
+      <h2 class="section-title reveal">Les 7 dimensions évaluées</h2>
+      <p class="section-subtitle reveal">Un cadre complet adapté aux réalités des PME en Afrique de l'Ouest.</p>
+      <div class="dims-grid">
+        <div class="dim-card reveal">
+          <div class="dim-icon" style="background:var(--color-primary-light);color:var(--dim-strategy);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/>
+  <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.5"/>
+  <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+  <line x1="12" y1="3" x2="12" y2="6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="12" y1="18" x2="12" y2="21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="3" y1="12" x2="6" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="18" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+</svg></div>
+          <div><h3>Stratégie Digitale</h3><p>Vision numérique, feuille de route, budget dédié et alignement avec les objectifs business.</p></div>
+        </div>
+        <div class="dim-card reveal">
+          <div class="dim-icon" style="background:var(--color-accent-light);color:var(--dim-client);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="9" cy="7" r="3" stroke="currentColor" stroke-width="1.5"/>
+  <path d="M3 19c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="18" cy="8" r="2" stroke="currentColor" stroke-width="1.5"/>
+  <path d="M14.5 19c0-2.485 1.567-4.5 3.5-4.5s3.5 2.015 3.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+</svg></div>
+          <div><h3>Client & Marketing Digital</h3><p>Présence en ligne, réseaux sociaux, WhatsApp Business, e-réputation et relation client digitale.</p></div>
+        </div>
+        <div class="dim-card reveal">
+          <div class="dim-icon" style="background:var(--color-success-light);color:var(--dim-operations);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M12 2L12 6M12 18L12 22M4.93 4.93L7.76 7.76M16.24 16.24L19.07 19.07M2 12L6 12M18 12L22 12M4.93 19.07L7.76 16.24M16.24 7.76L19.07 4.93" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/>
+</svg></div>
+          <div><h3>Opérations & Processus</h3><p>Digitalisation des processus internes, facturation, gestion des stocks, paie et flux de travail.</p></div>
+        </div>
+        <div class="dim-card reveal">
+          <div class="dim-icon" style="background:#eff6ff;color:var(--dim-technology);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="2" y="4" width="20" height="13" rx="2" stroke="currentColor" stroke-width="1.5"/>
+  <path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M7 9l2.5 2.5L7 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M12 14h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+</svg></div>
+          <div><h3>Technologie & Infrastructure</h3><p>Équipements, logiciels, connectivité internet, cloud, mobile money et outils de collaboration.</p></div>
+        </div>
+        <div class="dim-card reveal">
+          <div class="dim-icon" style="background:#f5f0fe;color:var(--dim-data);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="3" y="14" width="4" height="7" rx="1" stroke="currentColor" stroke-width="1.5"/>
+  <rect x="10" y="9" width="4" height="12" rx="1" stroke="currentColor" stroke-width="1.5"/>
+  <rect x="17" y="3" width="4" height="18" rx="1" stroke="currentColor" stroke-width="1.5"/>
+  <path d="M5 11L12 7L19 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div>
+          <div><h3>Données & Pilotage</h3><p>Collecte, stockage et exploitation des données pour la prise de décision.</p></div>
+        </div>
+        <div class="dim-card reveal">
+          <div class="dim-icon" style="background:var(--color-warning-light);color:var(--dim-culture);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M12 3L4 7v6c0 4.418 3.582 8 8 8s8-3.582 8-8V7L12 3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div>
+          <div><h3>Organisation & Culture</h3><p>Compétences digitales de l'équipe, formation continue, adhésion au changement.</p></div>
+        </div>
+        <div class="dim-card reveal">
+          <div class="dim-icon" style="background:#fde8ef;color:var(--dim-leadership);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+</svg></div>
+          <div><h3>Leadership & Gouvernance</h3><p>Implication de la direction, pilotage du numérique et veille technologique.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ====== VIEW: COMPANY FORM ====== -->
+<div id="view-form" class="view">
+  <section class="quiz-view">
+    <div class="container--narrow">
+      <div class="company-form">
+        <h2>Informations sur votre entreprise</h2>
+        <p>Ces informations permettent de contextualiser votre diagnostic. Elles restent confidentielles.</p>
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label" for="company-name">Nom de l'entreprise</label>
+            <input class="form-input" type="text" id="company-name" placeholder="Ex: Ma PME Sarl">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="company-sector">Secteur d'activité</label>
+            <select class="form-select" id="company-sector">
+              <option value="">Sélectionner...</option>
+              <option value="commerce">Commerce / Distribution</option>
+              <option value="restauration">Restauration / Hôtellerie</option>
+              <option value="services">Services aux entreprises</option>
+              <option value="agriculture">Agriculture / Agro-industrie</option>
+              <option value="sante">Santé</option>
+              <option value="education">Éducation / Formation</option>
+              <option value="transport">Transport / Logistique</option>
+              <option value="construction">BTP / Construction</option>
+              <option value="tech">Technologie / Numérique</option>
+              <option value="artisanat">Artisanat / Production</option>
+              <option value="finance">Finance / Assurance</option>
+              <option value="ong">ONG / Association</option>
+              <option value="autre">Autre</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="company-size">Nombre d'employés</label>
+            <select class="form-select" id="company-size">
+              <option value="">Sélectionner...</option>
+              <option value="1-5">1 à 5</option>
+              <option value="6-20">6 à 20</option>
+              <option value="21-50">21 à 50</option>
+              <option value="51-200">51 à 200</option>
+              <option value="200+">Plus de 200</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="company-country">Pays</label>
+            <select class="form-select" id="company-country">
+              <option value="benin" selected>Bénin</option>
+              <option value="togo">Togo</option>
+              <option value="cote-ivoire">Côte d'Ivoire</option>
+              <option value="senegal">Sénégal</option>
+              <option value="burkina">Burkina Faso</option>
+              <option value="niger">Niger</option>
+              <option value="mali">Mali</option>
+              <option value="cameroun">Cameroun</option>
+              <option value="autre-pays">Autre</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button class="btn btn--primary btn--large" onclick="startQuiz()">
+            Commencer le diagnostic
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ====== VIEW: QUIZ ====== -->
+<div id="view-quiz" class="view">
+  <section class="quiz-view">
+    <div class="container--narrow">
+      <div class="quiz-progress-bar">
+        <div class="quiz-progress-fill" id="quiz-progress"></div>
+      </div>
+      <div class="quiz-header">
+        <div class="quiz-dimension-badge" id="quiz-dim-badge">Stratégie Digitale</div>
+        <div class="quiz-counter" id="quiz-counter">1 / 21</div>
+      </div>
+      <div class="quiz-question-card" id="quiz-question-card">
+        <div class="quiz-question-text" id="quiz-question">Chargement...</div>
+        <div class="quiz-options" id="quiz-options"></div>
+      </div>
+      <div class="quiz-nav">
+        <button class="btn btn--ghost" id="quiz-prev" onclick="prevQuestion()" disabled>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Précédent
+        </button>
+        <button class="btn btn--primary" id="quiz-next" onclick="nextQuestion()">
+          Suivant
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ====== VIEW: EMAIL GATE ====== -->
+<div id="view-email" class="view">
+  <section class="quiz-view">
+    <div class="container--narrow">
+      <div class="email-gate">
+        <div class="email-gate-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="3" y="14" width="4" height="7" rx="1" stroke="currentColor" stroke-width="1.5"/>
+  <rect x="10" y="9" width="4" height="12" rx="1" stroke="currentColor" stroke-width="1.5"/>
+  <rect x="17" y="3" width="4" height="18" rx="1" stroke="currentColor" stroke-width="1.5"/>
+  <path d="M5 11L12 7L19 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div>
+        <h2>Votre diagnostic est prêt !</h2>
+        <p>Entrez votre email pour recevoir vos résultats détaillés et votre plan d'action personnalisé — en moins de 5 minutes.</p>
+
+        <!-- Leads capturés via EmailJS -->
+
+        <div class="email-gate-form">
+          <input class="form-input" type="email" id="lead-email" placeholder="votre@email.com" required>
+          <button class="btn btn--primary" onclick="submitEmailAndShowResults()">
+            Voir mes résultats
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+        <p class="email-gate-promise">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Aucun spam. Vos données restent confidentielles.
+        </p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ====== VIEW: RESULTS ====== -->
+<div id="view-results" class="view">
+  <section class="results-view">
+    <div class="container">
+      <div class="results-hero">
+        <h1>Votre Diagnostic de Maturité Digitale</h1>
+        <p class="results-company-name" id="results-company"></p>
+        <div class="score-circle-container">
+          <div class="score-circle">
+            <svg viewBox="0 0 180 180">
+              <circle class="score-circle-bg" cx="90" cy="90" r="78"/>
+              <circle class="score-circle-fill" id="score-arc" cx="90" cy="90" r="78"
+                stroke="var(--color-primary)"
+                stroke-dasharray="490"
+                stroke-dashoffset="490"/>
+            </svg>
+            <div class="score-circle-text">
+              <span class="score-value" id="score-display">0</span>
+              <span class="score-max">/ 100</span>
+            </div>
+          </div>
+        </div>
+        <div id="maturity-badge-container"></div>
+      </div>
+
+      <div class="results-grid">
+        <div class="results-card">
+          <h3>Profil Radar</h3>
+          <div class="radar-container">
+            <canvas id="results-radar-canvas"></canvas>
+          </div>
+        </div>
+        <div class="results-card">
+          <h3>Scores par dimension</h3>
+          <div class="dim-scores-list" id="dim-scores-list"></div>
+        </div>
+        <div class="results-card results-card--full">
+          <h3>Plan d'action prioritaire</h3>
+          <div class="reco-list" id="reco-list"></div>
+        </div>
+        <div class="results-card results-card--full">
+          <h3>Badges de maturité</h3>
+          <div class="badges-grid" id="badges-grid"></div>
+        </div>
+      </div>
+
+      <div class="cta-band">
+        <div class="container">
+          <h2>Passez à l'action avec un expert</h2>
+          <p>NOBIRU vous a montré où vous en êtes. Réservez 30 minutes gratuites — je vous livre une feuille de route personnalisée selon votre score et votre secteur.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:var(--space-3);justify-content:center;align-items:center;">
+            <!-- Cal.com CTA principal -->
+            <a href="https://cal.com/mario-dossousognon-uvzkiv/30min" target="_blank" class="btn btn--large" style="background:white;color:var(--color-primary);border-color:white;font-weight:700;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              Réserver mon appel gratuit
+            </a>
+            <!-- WhatsApp secondaire -->
+            <a href="https://wa.me/22965622143" target="_blank" class="btn btn--large" style="background:transparent;color:white;border:1.5px solid rgba(255,255,255,0.4);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.559 4.14 1.535 5.879L.057 23.882l6.198-1.624A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.007-1.371l-.359-.214-3.721.976.993-3.63-.234-.373A9.818 9.818 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+              WhatsApp
+            </a>
+          </div>
+          <p style="font-size:var(--text-xs);color:rgba(255,255,255,0.5);margin:var(--space-4) auto 0;">Appel 100% gratuit · Sans engagement · Réponse sous 24h</p>
+        </div>
+      </div>
+
+      <div class="results-actions">
+        <button class="btn btn--outline btn--large" onclick="showView('landing')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0"/><path d="M14 8l-4 4 4 4"/></svg>
+          Recommencer
+        </button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <!-- Logo + tagline -->
+      <div class="footer-brand">
+        <div style="display:flex;align-items:center;gap:var(--space-2);">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAIAAAD9b0jDAAABCGlDQ1BJQ0MgUHJvZmlsZQAAeJxjYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiBEAwSk4sLGHADoKpv1yBqL+viUYcLcKakFicD6Q9ArFIEtBxopAiQLZIOYWuA2EkQtg2IXV5SUAJkB4DYRSFBzkB2CpCtkY7ETkJiJxcUgdT3ANk2uTmlyQh3M/Ck5oUGA2kOIJZhKGYIYnBncAL5H6IkfxEDg8VXBgbmCQixpJkMDNtbGRgkbiHEVBYwMPC3MDBsO48QQ4RJQWJRIliIBYiZ0tIYGD4tZ2DgjWRgEL7AwMAVDQsIHG5TALvNnSEfCNMZchhSgSKeDHkMyQx6QJYRgwGDIYMZAKbWPz9HbOBQAAABP0lEQVR4nO2TMYqDQBSGx3GNCAYLDaQwwZA0KSxyhlzIwlLEyoTY2EQED2CRlDlCOhuPkFJsgxAL+beQDWI2YLILC4tfNW+Y+d78MI+Qnp7/APNFa/N9Hcuy95Jl2fddLSiliqIMBoOmXZKkl0V1Xo7jHMfJ8xzA9XoNw1BRFEKIZVlZltXrF95ep46iCEAcx+v1erPZADifz4SQMAwBzGazOkcnY31uNBoBOJ1OPM97nieK4m63A7BcLm3brqpK07Rn0o9nakEQACRJMp/PTdMsimK73Y7H48vlous6pfR2u3UNfm8+nU4BBEFAKU3TFIBhGKvVyvd9AIfDgWGYrtmb8YuicF2XEDKZTI7HIwAAZVnu93tRFB8/bydUVRUE4V7KsrxYLIbD4cuib2kl/dEUUEqbl2v1rw1VT88f8wlJ6m6TVfOa2wAAAABJRU5ErkJggg==" alt="NOBIRU" style="width:28px;height:28px;border-radius:5px;">
+          <span style="font-family:var(--font-display);font-size:1rem;font-weight:700;color:var(--color-text);">NOBIRU<span style="color:var(--color-primary);">.</span></span>
+        </div>
+        <p>Diagnostic de maturité digitale<br>pour PME ouest-africaines.</p>
+      </div>
+      <!-- Contact + icônes sociales -->
+      <div class="footer-contact">
+        <p>Un projet ? Parlons-en.</p>
+        <div class="footer-icons">
+          <a href="https://wa.me/22965622143" class="footer-icon footer-icon--primary" title="WhatsApp" aria-label="WhatsApp">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.559 4.14 1.535 5.879L.057 23.882l6.198-1.624A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.007-1.371l-.359-.214-3.721.976.993-3.63-.234-.373A9.818 9.818 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/mardoch%C3%A9e-dossou-sognon-2b400b26b/" target="_blank" class="footer-icon footer-icon--secondary" title="LinkedIn" aria-label="LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="mailto:mardochdossousognon@gmail.com" class="footer-icon footer-icon--secondary" title="Email" aria-label="Email">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <p>© 2026 NOBIRU · Conçu au Bénin 🇧🇯</p>
+      <a href="#" href="/politique-de-confidentialite.html" target="_blank">Politique de confidentialité</a>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+// ====== DATA ======
+const DIMENSIONS = [
+  { id: 'strategy',   name: 'Stratégie Digitale',         icon: '🎯', svg: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg>` },
+  { id: 'client',     name: 'Client & Marketing Digital', icon: '👥', svg: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="7" r="3"/><path d="M3 19c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke-linecap="round"/><circle cx="18" cy="8" r="2"/><path d="M14.5 19c0-2.485 1.567-4.5 3.5-4.5s3.5 2.015 3.5 4.5" stroke-linecap="round"/></svg>` },
+  { id: 'operations', name: 'Opérations & Processus',     icon: '⚙️', svg: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L12 6M12 18L12 22M4.93 4.93L7.76 7.76M16.24 16.24L19.07 19.07M2 12L6 12M18 12L22 12" stroke-linecap="round"/><circle cx="12" cy="12" r="3"/></svg>` },
+  { id: 'technology', name: 'Technologie & Infrastructure',icon: '💻', svg: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4" stroke-linecap="round"/><path d="M7 9l2.5 2.5L7 14" stroke-linecap="round"/><path d="M12 14h4" stroke-linecap="round"/></svg>` },
+  { id: 'data',       name: 'Données & Pilotage',         icon: '📊', svg: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="14" width="4" height="7" rx="1"/><rect x="10" y="9" width="4" height="12" rx="1"/><rect x="17" y="3" width="4" height="18" rx="1"/></svg>` },
+  { id: 'culture',    name: 'Organisation & Culture',     icon: '🛡️', svg: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3L4 7v6c0 4.418 3.582 8 8 8s8-3.582 8-8V7L12 3z" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>` },
+  { id: 'leadership', name: 'Leadership & Gouvernance',   icon: '⭐', svg: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z" stroke-linejoin="round"/></svg>` }
+];
+
+const QUESTIONS = [
+  // Stratégie
+  { dimension:'strategy', text:"Votre entreprise dispose-t-elle d'une vision ou d'un plan clair pour intégrer le numérique dans ses activités ?", options:[{label:"Aucun plan numérique",score:1},{label:"Quelques idées, mais rien de formalisé",score:2},{label:"Un plan informel partagé oralement",score:3},{label:"Un document stratégique écrit avec des objectifs",score:4},{label:"Une feuille de route digitale détaillée avec budget et KPIs",score:5}]},
+  { dimension:'strategy', text:"Quel pourcentage de votre chiffre d'affaires ou budget est consacré au numérique ?", options:[{label:"Aucun budget dédié (0%)",score:1},{label:"Moins de 2% — quelques dépenses ponctuelles",score:2},{label:"Entre 2% et 5% — un petit budget régulier",score:3},{label:"Entre 5% et 10% — un investissement structuré",score:4},{label:"Plus de 10% — le digital est une priorité budgétaire",score:5}]},
+  { dimension:'strategy', text:"Comment le numérique est-il perçu dans votre entreprise ?", options:[{label:"Un coût ou une contrainte inutile",score:1},{label:"Un outil secondaire pour des tâches basiques",score:2},{label:"Un levier utile pour certaines fonctions",score:3},{label:"Un moteur important de croissance",score:4},{label:"Le cœur de notre modèle et notre avantage concurrentiel",score:5}]},
+  // Client
+  { dimension:'client', text:"Comment vos clients vous trouvent-ils ou vous contactent-ils principalement ?", options:[{label:"Uniquement le bouche-à-oreille et les visites physiques",score:1},{label:"Bouche-à-oreille + quelques appels WhatsApp",score:2},{label:"Page Facebook ou WhatsApp Business actifs",score:3},{label:"Présence multicanale : réseaux sociaux, site web, WhatsApp",score:4},{label:"Stratégie digitale complète : SEO, publicités ciblées, CRM",score:5}]},
+  { dimension:'client', text:"Utilisez-vous les réseaux sociaux pour promouvoir vos produits ou services ?", options:[{label:"Aucune présence sur les réseaux sociaux",score:1},{label:"Un compte créé mais rarement utilisé",score:2},{label:"Des publications régulières (1 à 3 par semaine)",score:3},{label:"Une stratégie de contenu planifiée avec interactions régulières",score:4},{label:"Campagnes sponsorisées, analyse des performances et CM actif",score:5}]},
+  { dimension:'client', text:"Comment gérez-vous la relation avec vos clients après la vente ?", options:[{label:"Aucun suivi après-vente",score:1},{label:"Suivi informel par téléphone ou WhatsApp",score:2},{label:"Un fichier (Excel, carnet) pour noter les clients réguliers",score:3},{label:"Un outil CRM ou base de données clients structurée",score:4},{label:"CRM intégré avec automatisations (relances, satisfaction, fidélisation)",score:5}]},
+  // Opérations
+  { dimension:'operations', text:"Comment gérez-vous votre facturation et comptabilité ?", options:[{label:"Tout sur papier ou cahier",score:1},{label:"Un fichier Excel basique",score:2},{label:"Un logiciel simple (Wave, InvoiceNinja...)",score:3},{label:"Un logiciel de comptabilité complet (Odoo, QuickBooks...)",score:4},{label:"Un ERP intégré reliant compta, stocks, ventes et RH",score:5}]},
+  { dimension:'operations', text:"Vos processus internes (commandes, livraisons, planning) sont-ils digitalisés ?", options:[{label:"Tout est géré manuellement (papier, oral)",score:1},{label:"Quelques fichiers Excel pour le suivi",score:2},{label:"Un outil de gestion de tâches ou de projets (Trello, Notion...)",score:3},{label:"Plusieurs processus automatisés (commandes, stocks, planning)",score:4},{label:"Workflows entièrement automatisés de bout en bout",score:5}]},
+  { dimension:'operations', text:"Comment vos employés communiquent-ils et collaborent-ils au quotidien ?", options:[{label:"Réunions physiques et appels téléphoniques uniquement",score:1},{label:"Groupes WhatsApp pour la communication",score:2},{label:"WhatsApp + email professionnel",score:3},{label:"Outils de collaboration (Google Workspace, Slack, Teams...)",score:4},{label:"Suite complète de collaboration avec gestion documentaire centralisée",score:5}]},
+  // Technologie
+  { dimension:'technology', text:"Quel est l'état de votre équipement informatique ?", options:[{label:"Pas d'ordinateur — uniquement des téléphones personnels",score:1},{label:"Quelques ordinateurs partagés, pas toujours fonctionnels",score:2},{label:"Un ordinateur par poste clé + smartphones professionnels",score:3},{label:"Équipement complet et récent pour toute l'équipe",score:4},{label:"Infra moderne : cloud, serveurs, sécurité, maintenance régulière",score:5}]},
+  { dimension:'technology', text:"Quelle est la qualité de votre connexion internet ?", options:[{label:"Pas de connexion internet au bureau",score:1},{label:"Connexion mobile (data) partagée, instable",score:2},{label:"Connexion fixe mais souvent lente ou en panne",score:3},{label:"Connexion fibre ou 4G+ stable pour le travail quotidien",score:4},{label:"Connexion haut débit redondante (fibre + backup) avec Wi-Fi sécurisé",score:5}]},
+  { dimension:'technology', text:"Proposez-vous le paiement digital à vos clients (Mobile Money, carte, en ligne) ?", options:[{label:"Non, uniquement le cash",score:1},{label:"Mobile Money accepté de façon informelle",score:2},{label:"Mobile Money officiel (MTN MoMo, Moov Money...)",score:3},{label:"Mobile Money + paiement par carte ou lien de paiement",score:4},{label:"Passerelle de paiement complète (Fedapay, Flutterwave...) sur site ou app",score:5}]},
+  // Data
+  { dimension:'data', text:"Comment prenez-vous vos décisions business (prix, stocks, investissements) ?", options:[{label:"Au feeling et à l'expérience du dirigeant",score:1},{label:"En regardant les chiffres de temps en temps (cahier, mémoire)",score:2},{label:"Avec un suivi régulier dans un fichier Excel",score:3},{label:"Avec des tableaux de bord et indicateurs clés (KPIs)",score:4},{label:"Analyses avancées avec données en temps réel et prédictions",score:5}]},
+  { dimension:'data', text:"Disposez-vous d'un fichier ou base de données de vos clients ?", options:[{label:"Non, aucune liste de clients",score:1},{label:"Un carnet ou répertoire téléphonique",score:2},{label:"Un fichier Excel avec noms et contacts",score:3},{label:"Une base de données structurée (CRM ou outil dédié)",score:4},{label:"Base segmentée avec historique d'achat, préférences et scoring",score:5}]},
+  { dimension:'data', text:"Vos données sont-elles sauvegardées et sécurisées ?", options:[{label:"Aucune sauvegarde — tout est sur un seul ordinateur ou papier",score:1},{label:"Sauvegarde ponctuelle sur clé USB ou disque externe",score:2},{label:"Certains fichiers sont sur Google Drive ou OneDrive",score:3},{label:"Sauvegarde cloud régulière + accès sécurisé (mots de passe)",score:4},{label:"Politique de sécurité complète : backup auto, antivirus, chiffrement",score:5}]},
+  // Culture
+  { dimension:'culture', text:"Quel est le niveau de compétences digitales de vos employés ?", options:[{label:"Très faible — la plupart n'utilisent pas d'ordinateur",score:1},{label:"Basique — usage limité à WhatsApp et appels",score:2},{label:"Intermédiaire — maîtrise d'Excel, email et internet",score:3},{label:"Bon — à l'aise avec les logiciels métier et outils digitaux",score:4},{label:"Avancé — l'équipe propose elle-même des améliorations digitales",score:5}]},
+  { dimension:'culture', text:"Organisez-vous des formations digitales pour vos employés ?", options:[{label:"Jamais — pas de formation",score:1},{label:"Rarement — quand un problème survient",score:2},{label:"Occasionnellement — 1 à 2 fois par an",score:3},{label:"Régulièrement — un plan de formation annuel",score:4},{label:"Formation continue + veille technologique active",score:5}]},
+  { dimension:'culture', text:"Comment vos employés réagissent-ils face aux changements numériques ?", options:[{label:"Forte résistance — refus d'utiliser les nouveaux outils",score:1},{label:"Méfiance — ils préfèrent les méthodes habituelles",score:2},{label:"Acceptation passive — ils s'adaptent si on leur montre",score:3},{label:"Ouverture — ils sont curieux et volontaires",score:4},{label:"Enthousiasme — ils sont moteurs du changement numérique",score:5}]},
+  // Leadership
+  { dimension:'leadership', text:"Le dirigeant est-il personnellement impliqué dans la transformation digitale ?", options:[{label:"Non, le sujet est délégué ou ignoré",score:1},{label:"Il s'y intéresse de loin, sans action concrète",score:2},{label:"Il soutient les initiatives quand on lui en parle",score:3},{label:"Il porte personnellement des projets numériques",score:4},{label:"Il est le premier ambassadeur du digital et forme une vision",score:5}]},
+  { dimension:'leadership', text:"Existe-t-il un responsable ou référent du numérique dans votre entreprise ?", options:[{label:"Non, personne n'est en charge",score:1},{label:"Le dirigeant gère tout lui-même en plus du reste",score:2},{label:"Un employé polyvalent s'en occupe en partie",score:3},{label:"Une personne dédiée (interne ou prestataire) gère le numérique",score:4},{label:"Une équipe ou un comité digital avec objectifs et reporting",score:5}]},
+  { dimension:'leadership', text:"Votre direction suit-elle l'actualité et les tendances du numérique ?", options:[{label:"Non, aucune veille",score:1},{label:"De façon passive (ce qui passe sur les réseaux sociaux)",score:2},{label:"Lecture occasionnelle d'articles ou participation à des événements",score:3},{label:"Veille régulière + participation à des formations ou salons",score:4},{label:"Veille active, benchmark concurrentiel et anticipation des tendances",score:5}]}
+];
+
+const MATURITY_LEVELS = [
+  { min:0,  max:20, label:'Débutant Digital',   emoji:'🌱', color:'#c43030', bgColor:'#fdeaea', description:"Votre entreprise est au tout début de sa transformation. De grandes opportunités vous attendent." },
+  { min:21, max:40, label:'Explorateur Digital', emoji:'🧭', color:'#c67014', bgColor:'#fdf0e0', description:"Vous avez fait les premiers pas. Il est temps de structurer votre approche digitale." },
+  { min:41, max:60, label:'Praticien Digital',   emoji:'🔧', color:'#d4940e', bgColor:'#fdf3dc', description:"Bonne base en place. Concentrez-vous sur l'automatisation et les données." },
+  { min:61, max:80, label:'Avancé Digital',      emoji:'🚀', color:'#2d8639', bgColor:'#e8f5ea', description:"Votre maturité est solide. Optimisez et innovez pour prendre l'avantage." },
+  { min:81, max:100,label:'Leader Digital',      emoji:'👑', color:'#0e7c6e', bgColor:'#e6f5f2', description:"Félicitations ! Vous êtes un modèle de transformation digitale dans votre secteur." }
+];
+
+const BADGES = [
+  { id:'strategist', label:'Stratège',    icon:'🎯', dim:'strategy',   threshold:12, desc:'Score Stratégie 80%+' },
+  { id:'marketer',   label:'Marketeur',   icon:'📣', dim:'client',     threshold:12, desc:'Score Client 80%+' },
+  { id:'optimizer',  label:'Optimiseur',  icon:'⚙️', dim:'operations', threshold:12, desc:'Score Processus 80%+' },
+  { id:'techie',     label:'Technophile', icon:'💻', dim:'technology', threshold:12, desc:'Score Techno 80%+' },
+  { id:'analyst',    label:'Analyste',    icon:'📊', dim:'data',       threshold:12, desc:'Score Données 80%+' },
+  { id:'innovator',  label:'Innovateur',  icon:'🛡️', dim:'culture',    threshold:12, desc:'Score Culture 80%+' },
+  { id:'leader',     label:'Leader',      icon:'⭐', dim:'leadership', threshold:12, desc:'Score Leadership 80%+' },
+  { id:'balanced',   label:'Équilibré',   icon:'⚖️', dim:null,        threshold:null, desc:'Aucune dimension sous 40%' },
+  { id:'champion',   label:'Champion',    icon:'🏆', dim:null,        threshold:null, desc:'Score global 80%+' }
+];
+
+const RECOMMENDATIONS = {
+  strategy: {
+    low:    { title:"Définir une vision digitale",      text:"Commencez par écrire 3 objectifs numériques pour les 6 prochains mois (ex: créer une page Facebook pro, adopter un outil de facturation). Une vision simple suffit pour démarrer." },
+    medium: { title:"Formaliser la feuille de route",   text:"Documentez votre plan digital : objectifs, budget, calendrier et responsable. Alignez chaque action numérique avec un objectif business concret." },
+    high:   { title:"Piloter l'innovation digitale",    text:"Intégrez des KPIs digitaux dans votre tableau de bord. Explorez l'IA et l'automatisation pour prendre de l'avance sur vos concurrents." }
+  },
+  client: {
+    low:    { title:"Créer votre présence en ligne",    text:"Créez un profil WhatsApp Business + une page Facebook professionnelle cette semaine. Publiez 2 à 3 fois par semaine : photos de produits, témoignages clients, promotions." },
+    medium: { title:"Structurer votre marketing digital",text:"Planifiez vos publications avec un calendrier éditorial. Utilisez un outil CRM simple pour suivre vos prospects et relancer vos clients." },
+    high:   { title:"Optimiser l'expérience client",   text:"Lancez des campagnes sponsorisées ciblées. Mesurez le ROI de chaque canal. Automatisez les parcours clients (email de bienvenue, suivi post-achat)." }
+  },
+  operations: {
+    low:    { title:"Digitaliser la facturation",       text:"Adoptez un outil de facturation gratuit (Wave, Dolibarr) dès maintenant. Gain de temps, moins d'erreurs, image professionnelle." },
+    medium: { title:"Automatiser les processus clés",   text:"Identifiez les 3 tâches les plus répétitives (commandes, relances, reporting) et utilisez Trello, Notion ou n8n pour les automatiser." },
+    high:   { title:"Intégrer un ERP",                  text:"Envisagez un ERP comme Odoo pour centraliser ventes, stocks, comptabilité et RH. Cela améliore la productivité de 20-30%." }
+  },
+  technology: {
+    low:    { title:"Équiper l'équipe de base",         text:"Commencez par un ordinateur partagé + connexion internet stable. Activez Google Workspace gratuit pour email pro et stockage cloud." },
+    medium: { title:"Adopter le cloud",                 text:"Migrez vos fichiers vers Google Drive ou OneDrive. Activez MTN MoMo ou Moov Money pour accepter les paiements digitaux." },
+    high:   { title:"Sécuriser l'infrastructure",       text:"Auditez votre cybersécurité. Mettez en place des sauvegardes automatiques et une politique de mots de passe forts." }
+  },
+  data: {
+    low:    { title:"Créer votre première base clients", text:"Commencez par un simple fichier Excel avec nom, téléphone, secteur et date du dernier achat. C'est votre premier actif data." },
+    medium: { title:"Mettre en place des KPIs",         text:"Définissez 5 indicateurs clés (CA mensuel, nb clients, taux de fidélisation, coût acquisition, marge). Suivez-les chaque semaine." },
+    high:   { title:"Exploiter les données avancées",   text:"Adoptez un outil BI (Google Looker Studio, gratuit) pour visualiser vos données. Lancez des analyses prédictives sur vos ventes." }
+  },
+  culture: {
+    low:    { title:"Former les équipes aux bases",     text:"Organisez une session mensuelle de 2h sur les outils du quotidien (WhatsApp Business, Google Drive, Excel). Commencez par les outils qu'ils utilisent déjà." },
+    medium: { title:"Développer une culture digitale",  text:"Créez un canal WhatsApp interne dédié aux bonnes pratiques digitales. Nommez un référent numérique dans chaque département." },
+    high:   { title:"Innover en continu",               text:"Mettez en place un programme d'innovation interne (boîte à idées digitales). Participez aux écosystèmes startups béninois." }
+  },
+  leadership: {
+    low:    { title:"Impliquer la direction",           text:"Le dirigeant doit consacrer 2h/semaine au suivi digital. Assistez à un événement tech à Cotonou (ASIN, GIZ, startup weekends) pour prendre conscience des enjeux." },
+    medium: { title:"Nommer un référent numérique",     text:"Désignez un Référent Digital interne ou faites appel à un consultant externe. Définissez des objectifs clairs et un budget dédié." },
+    high:   { title:"Créer un comité digital",          text:"Mettez en place un comité mensuel de pilotage numérique avec la direction. Définissez une feuille de route sur 3 ans." }
+  }
+};
+
+// ====== STATE ======
+let currentQuestion = 0;
+let answers = new Array(QUESTIONS.length).fill(null);
+let companyInfo = {};
+let computedScores = {};
+let totalScore = 0;
+let resultsRadarChart = null;
+let heroRadarChart = null;
+
+// ====== NAVIGATION ======
+function showView(id) {
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  document.getElementById('view-' + id).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ====== THEME ======
+function toggleTheme() {
+  const html = document.documentElement;
+  html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+  if (heroRadarChart) { drawHeroRadar(); }
+  if (resultsRadarChart) { updateResultsRadarColors(); }
+}
+
+// ====== QUIZ ======
+function startQuiz() {
+  const name = document.getElementById('company-name').value.trim();
+  const sector = document.getElementById('company-sector').value;
+  const size = document.getElementById('company-size').value;
+  const country = document.getElementById('company-country').value;
+  if (!name || !sector || !size) {
+    alert('Merci de remplir tous les champs obligatoires.');
+    return;
+  }
+  companyInfo = { name, sector, size, country };
+  currentQuestion = 0;
+  answers = new Array(QUESTIONS.length).fill(null);
+  showView('quiz');
+  renderQuestion();
+}
+
+function renderQuestion() {
+  const q = QUESTIONS[currentQuestion];
+  const total = QUESTIONS.length;
+  const pct = ((currentQuestion) / total) * 100;
+  document.getElementById('quiz-progress').style.width = pct + '%';
+  document.getElementById('quiz-counter').textContent = (currentQuestion + 1) + ' / ' + total;
+  const curDim = DIMENSIONS.find(d => d.id === q.dimension);
+  document.getElementById('quiz-dim-badge').innerHTML = (curDim?.svg || curDim?.icon || '') + ' ' + (curDim?.name || '');
+  document.getElementById('quiz-question').textContent = q.text;
+
+  const container = document.getElementById('quiz-options');
+  container.innerHTML = '';
+  q.options.forEach((opt, idx) => {
+    const btn = document.createElement('button');
+    btn.className = 'quiz-option' + (answers[currentQuestion] === idx ? ' selected' : '');
+    btn.onclick = () => selectOption(idx);
+    btn.innerHTML = `<div class="quiz-option-radio"></div><div class="quiz-option-content"><span class="quiz-option-label">${opt.label}</span></div>`;
+    container.appendChild(btn);
+  });
+
+  document.getElementById('quiz-prev').disabled = currentQuestion === 0;
+  const nextBtn = document.getElementById('quiz-next');
+  if (currentQuestion === total - 1) {
+    nextBtn.innerHTML = 'Voir mes résultats <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>';
+  } else {
+    nextBtn.innerHTML = 'Suivant <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
+  }
+
+  // Scroll vers le haut de la question à chaque nouvelle question
+  setTimeout(() => {
+    document.getElementById('quiz-question-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 50);
+}
+
+function selectOption(idx) {
+  answers[currentQuestion] = idx;
+  document.querySelectorAll('.quiz-option').forEach((btn, i) => {
+    btn.classList.toggle('selected', i === idx);
+  });
+  // Auto-scroll vers le haut de la question après sélection
+  setTimeout(() => {
+    document.getElementById('quiz-question-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 150);
+}
+
+function nextQuestion() {
+  if (answers[currentQuestion] === null) {
+    const card = document.getElementById('quiz-question-card');
+    card.style.borderColor = 'var(--color-error)';
+    card.style.boxShadow = '0 0 0 2px var(--color-error)';
+    setTimeout(() => { card.style.borderColor = ''; card.style.boxShadow = ''; }, 800);
+    return;
+  }
+  if (currentQuestion < QUESTIONS.length - 1) {
+    currentQuestion++;
+    renderQuestion();
+  } else {
+    calculateScores();
+    showView('email');
+  }
+}
+
+function prevQuestion() {
+  if (currentQuestion > 0) { currentQuestion--; renderQuestion(); }
+}
+
+// ====== SCORE CALCULATION ======
+function calculateScores() {
+  const dimScores = {};
+  DIMENSIONS.forEach(d => { dimScores[d.id] = 0; });
+  QUESTIONS.forEach((q, i) => {
+    if (answers[i] !== null) dimScores[q.dimension] += q.options[answers[i]].score;
+  });
+  computedScores = dimScores;
+  totalScore = Math.round(Object.values(dimScores).reduce((sum, s) => sum + s, 0) / (15 * DIMENSIONS.length) * 100);
+}
+
+// ====== EMAIL CAPTURE + NETLIFY SUBMIT ======
+function submitEmailAndShowResults() {
+  const email = document.getElementById('lead-email').value.trim();
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    document.getElementById('lead-email').style.borderColor = 'var(--color-error)';
+    setTimeout(() => { document.getElementById('lead-email').style.borderColor = ''; }, 1000);
+    return;
+  }
+
+  const level = MATURITY_LEVELS.find(l => totalScore >= l.min && totalScore <= l.max) || MATURITY_LEVELS[0];
+  const maxPerDim = 15;
+
+  // Scores par dimension en texte
+  const dimScoresText = DIMENSIONS.map(d => {
+    const pct = Math.round((computedScores[d.id] / maxPerDim) * 100);
+    return `${d.icon} ${d.name} : ${pct}%`;
+  }).join('\n');
+
+  // Top 3 priorités
+  const sorted = DIMENSIONS.map(d => ({
+    dim: d, pct: Math.round((computedScores[d.id] / maxPerDim) * 100)
+  })).sort((a, b) => a.pct - b.pct);
+  const priorites = sorted.slice(0, 3).map((item, idx) => {
+    const lvl = item.pct <= 33 ? 'low' : item.pct <= 66 ? 'medium' : 'high';
+    return `${idx + 1}. ${RECOMMENDATIONS[item.dim.id][lvl].title}`;
+  }).join('\n');
+
+  // Leads capturés via EmailJS ci-dessous
+
+  // Stats RPG par dimension
+  const maxPD = 15;
+  const statVal = (id) => Math.round((computedScores[id] / maxPD) * 100);
+  const statPct = (id) => statVal(id) + '%';
+
+  // Envoyer email via EmailJS
+  emailjs.send('service_v7ljxbm', 'template_2ncyh1p', {
+    to_email: email,
+    company_name: companyInfo.name,
+    score: totalScore,
+    maturity_label: level.label,
+    maturity_emoji: level.emoji,
+    maturity_description: level.description,
+    dim_scores: dimScoresText,
+    top_priorities: priorites,
+    whatsapp_link: 'https://wa.me/22965622143',
+    str_val: statVal('strategy'),   str_pct: statPct('strategy'),
+    agi_val: statVal('client'),     agi_pct: statPct('client'),
+    dex_val: statVal('operations'), dex_pct: statPct('operations'),
+    int_val: statVal('technology'), int_pct: statPct('technology'),
+    wis_val: statVal('data'),       wis_pct: statPct('data'),
+    cha_val: statVal('culture'),    cha_pct: statPct('culture'),
+    ldr_val: statVal('leadership'), ldr_pct: statPct('leadership')
+  }).catch(() => {});
+
+  showResults();
+}
+
+// ====== RESULTS ======
+function showResults() {
+  showView('results');
+  const level = MATURITY_LEVELS.find(l => totalScore >= l.min && totalScore <= l.max) || MATURITY_LEVELS[0];
+  document.getElementById('results-company').textContent = companyInfo.name;
+
+  // Score circle animation
+  setTimeout(() => {
+    const circumference = 2 * Math.PI * 78;
+    const offset = circumference - (totalScore / 100) * circumference;
+    const arc = document.getElementById('score-arc');
+    arc.style.strokeDasharray = circumference;
+    arc.style.strokeDashoffset = offset;
+    arc.style.stroke = level.color;
+    animateNumber('score-display', 0, totalScore, 1200);
+  }, 200);
+
+  // Badge
+  document.getElementById('maturity-badge-container').innerHTML = `
+    <div class="maturity-badge" style="background:${level.bgColor};color:${level.color};">
+      ${level.emoji} ${level.label}
+    </div>
+    <p style="font-size:var(--text-sm);color:var(--color-text-muted);margin-top:var(--space-3);max-width:48ch;margin-inline:auto;">${level.description}</p>
+  `;
+
+  renderResultsRadar(computedScores, 15);
+  renderDimensionBars(computedScores, 15);
+  renderRecommendations(computedScores, 15);
+  renderBadges(computedScores, 15, totalScore);
+}
+
+function animateNumber(id, start, end, duration) {
+  const el = document.getElementById(id);
+  const range = end - start;
+  const startTime = performance.now();
+  function step(time) {
+    const elapsed = time - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.round(start + range * eased);
+    if (progress < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+function renderResultsRadar(dimScores, maxPerDim) {
+  const canvas = document.getElementById('results-radar-canvas');
+  if (resultsRadarChart) resultsRadarChart.destroy();
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  const textColor = isDark ? '#e0ddd7' : '#2a2319';
+  const gridColor = isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.08)';
+  resultsRadarChart = new Chart(canvas, {
+    type: 'radar',
+    data: {
+      labels: DIMENSIONS.map(d => d.name.split(' ')[0]),
+      datasets: [{ label:'Votre Score', data: DIMENSIONS.map(d => Math.round((dimScores[d.id] / maxPerDim) * 100)),
+        backgroundColor: isDark ? 'rgba(63,184,166,0.2)' : 'rgba(14,124,110,0.15)',
+        borderColor: isDark ? '#3fb8a6' : '#0e7c6e', borderWidth: 2.5,
+        pointBackgroundColor: isDark ? '#3fb8a6' : '#0e7c6e', pointRadius: 5, pointHoverRadius: 7, fill: true }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: true,
+      scales: { r: { beginAtZero: true, max: 100,
+        ticks: { stepSize: 20, display: true, color: textColor, backdropColor: 'transparent', font: { size: 10, family: 'Satoshi' } },
+        grid: { color: gridColor }, angleLines: { color: gridColor },
+        pointLabels: { color: textColor, font: { size: 12, family: 'Satoshi', weight: '600' } } } },
+      plugins: { legend: { display: false },
+        tooltip: { backgroundColor: isDark ? '#2e2b24' : '#fff', titleColor: textColor, bodyColor: textColor, borderColor: gridColor, borderWidth: 1, padding: 12, cornerRadius: 8,
+          callbacks: { label: ctx => ctx.parsed.r + ' / 100' } } },
+      animation: { duration: 1200, easing: 'easeOutQuart' }
+    }
+  });
+}
+
+function updateResultsRadarColors() {
+  if (!resultsRadarChart) return;
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  const textColor = isDark ? '#e0ddd7' : '#2a2319';
+  const gridColor = isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.08)';
+  resultsRadarChart.data.datasets[0].backgroundColor = isDark ? 'rgba(63,184,166,0.2)' : 'rgba(14,124,110,0.15)';
+  resultsRadarChart.data.datasets[0].borderColor = isDark ? '#3fb8a6' : '#0e7c6e';
+  resultsRadarChart.data.datasets[0].pointBackgroundColor = isDark ? '#3fb8a6' : '#0e7c6e';
+  resultsRadarChart.options.scales.r.ticks.color = textColor;
+  resultsRadarChart.options.scales.r.grid.color = gridColor;
+  resultsRadarChart.options.scales.r.angleLines.color = gridColor;
+  resultsRadarChart.options.scales.r.pointLabels.color = textColor;
+  resultsRadarChart.update();
+}
+
+function getRank(pct) {
+  if (pct >= 90) return { label: 'SS', cls: 'rank-ss' };
+  if (pct >= 75) return { label: 'S',  cls: 'rank-s'  };
+  if (pct >= 60) return { label: 'A',  cls: 'rank-a'  };
+  if (pct >= 45) return { label: 'B',  cls: 'rank-b'  };
+  if (pct >= 30) return { label: 'C',  cls: 'rank-c'  };
+  return { label: 'D', cls: 'rank-d' };
+}
+
+function renderDimensionBars(dimScores, maxPerDim) {
+  const container = document.getElementById('dim-scores-list');
+  container.innerHTML = '';
+  const colorMap = { strategy:'var(--dim-strategy)', client:'var(--dim-client)', operations:'var(--dim-operations)', technology:'var(--dim-technology)', data:'var(--dim-data)', culture:'var(--dim-culture)', leadership:'var(--dim-leadership)' };
+  DIMENSIONS.forEach((dim, idx) => {
+    const pct = Math.round((dimScores[dim.id] / maxPerDim) * 100);
+    const color = colorMap[dim.id];
+    const rank = getRank(pct);
+    const item = document.createElement('div');
+    item.className = 'dim-score-item';
+    item.innerHTML = `
+      <div class="dim-score-header">
+        <span class="dim-score-name">
+          <span class="rpg-rank ${rank.cls}">${rank.label}</span>
+          ${dim.svg || dim.icon} ${dim.name}
+        </span>
+        <span class="dim-score-value" style="color:${color};font-size:var(--text-xs);">${pct}<span style="opacity:.5;font-weight:400">/100</span></span>
+      </div>
+      <div class="rpg-bar-wrap">
+        <div class="rpg-bar-fill" style="width:0%;background:${color};"></div>
+        <div class="rpg-bar-segments">${Array(10).fill('<div class="rpg-bar-segment"></div>').join('')}</div>
+      </div>
+    `;
+    container.appendChild(item);
+    setTimeout(() => { item.querySelector('.rpg-bar-fill').style.width = pct + '%'; }, 300 + idx * 80);
+  });
+}
+
+function renderRecommendations(dimScores, maxPerDim) {
+  const container = document.getElementById('reco-list');
+  container.innerHTML = '';
+  const sorted = DIMENSIONS.map(d => ({ dim: d, pct: Math.round((dimScores[d.id] / maxPerDim) * 100) })).sort((a, b) => a.pct - b.pct);
+  sorted.slice(0, 3).forEach((item, idx) => {
+    const level = item.pct <= 33 ? 'low' : item.pct <= 66 ? 'medium' : 'high';
+    const reco = RECOMMENDATIONS[item.dim.id][level];
+    const priority = idx === 0 ? 'high' : idx === 1 ? 'medium' : 'low';
+    const el = document.createElement('div');
+    el.className = 'reco-item';
+    el.innerHTML = `
+      <div class="reco-priority ${priority}">${idx + 1}</div>
+      <div class="reco-content"><h4>${item.dim.icon} ${reco.title}</h4><p>${reco.text}</p></div>
+    `;
+    container.appendChild(el);
+  });
+}
+
+function renderBadges(dimScores, maxPerDim, totalScore) {
+  const container = document.getElementById('badges-grid');
+  container.innerHTML = '';
+  BADGES.forEach(badge => {
+    let unlocked = false;
+    if (badge.id === 'balanced') unlocked = DIMENSIONS.every(d => (dimScores[d.id] / maxPerDim) * 100 >= 40);
+    else if (badge.id === 'champion') unlocked = totalScore >= 80;
+    else unlocked = dimScores[badge.dim] >= badge.threshold;
+    const card = document.createElement('div');
+    card.className = 'badge-card' + (unlocked ? '' : ' locked');
+    card.innerHTML = `<span class="badge-icon">${badge.icon}</span><span class="badge-label">${badge.label}</span><span class="badge-desc">${badge.desc}</span>`;
+    container.appendChild(card);
+  });
+}
+
+// ====== HERO RADAR ======
+function drawHeroRadar() {
+  const canvas = document.getElementById('hero-radar-canvas');
+  if (!canvas) return;
+  if (heroRadarChart) heroRadarChart.destroy();
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  const textColor = isDark ? '#918b80' : '#6b6358';
+  const gridColor = isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.06)';
+  heroRadarChart = new Chart(canvas, {
+    type: 'radar',
+    data: {
+      labels: ['Stratégie','Client','Opérations','Techno','Données','Culture','Leadership'],
+      datasets: [{ data:[72,45,58,65,35,50,68],
+        backgroundColor: isDark ? 'rgba(63,184,166,0.15)' : 'rgba(14,124,110,0.12)',
+        borderColor: isDark ? '#3fb8a6' : '#0e7c6e', borderWidth:2,
+        pointBackgroundColor: isDark ? '#3fb8a6' : '#0e7c6e', pointRadius:4, fill:true }]
+    },
+    options: {
+      responsive:true, maintainAspectRatio:true,
+      scales:{ r:{ beginAtZero:true, max:100, ticks:{ display:false },
+        grid:{ color:gridColor }, angleLines:{ color:gridColor },
+        pointLabels:{ color:textColor, font:{ size:11, family:'Satoshi', weight:'500' } } } },
+      plugins:{ legend:{ display:false }, tooltip:{ enabled:false } },
+      animation:{ duration:1500, easing:'easeOutQuart' }
+    }
+  });
+}
+
+// ====== SCROLL REVEAL ======
+function initScrollReveal() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+}
+
+// ====== INIT ======
+document.addEventListener('DOMContentLoaded', () => {
+  drawHeroRadar();
+  initScrollReveal();
+});
+</script>
+</body>
+</html>
