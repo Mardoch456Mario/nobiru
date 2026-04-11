@@ -429,56 +429,6 @@ button { cursor: pointer; background: none; border: none; }
 /* ============================================
    SCROLL REVEAL
    ============================================ */
-
-/* ============================================================
-   ONBOARDING STEPS
-   ============================================================ */
-.onboarding-steps { display: flex; align-items: center; gap: 0; margin-bottom: var(--space-8); }
-.onboarding-step { display: flex; flex-direction: column; align-items: center; gap: 4px; flex-shrink: 0; }
-.onboarding-step .step-dot { width: 32px; height: 32px; border-radius: var(--radius-full); background: var(--color-surface-offset); color: var(--color-text-muted); font-size: var(--text-xs); font-weight: 700; display: flex; align-items: center; justify-content: center; transition: all var(--transition-smooth); }
-.onboarding-step span { font-size: 11px; color: var(--color-text-faint); white-space: nowrap; }
-.onboarding-step.active .step-dot { background: var(--color-primary); color: white; }
-.onboarding-step.active span { color: var(--color-primary); font-weight: 600; }
-.onboarding-step.done .step-dot { background: var(--color-success); color: white; }
-.onboarding-step-line { flex: 1; height: 2px; background: var(--color-divider); margin: 0 var(--space-2); margin-bottom: 16px; }
-.onboarding-step-line.active { background: var(--color-primary); }
-
-/* ============================================================
-   WELCOME SCREEN
-   ============================================================ */
-.welcome-screen { background: var(--color-surface); border-radius: var(--radius-2xl); padding: clamp(var(--space-6), 4vw, var(--space-10)); box-shadow: var(--shadow-md); text-align: center; }
-.welcome-icon { font-size: 3.5rem; margin-bottom: var(--space-4); animation: bounceIn 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
-@keyframes bounceIn { from { transform: scale(0.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
-.welcome-screen h2 { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 800; margin-bottom: var(--space-2); }
-.welcome-subtitle { font-size: var(--text-base); color: var(--color-text-muted); margin-bottom: var(--space-6); }
-.welcome-info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-3); margin-bottom: var(--space-5); }
-@media (max-width: 480px) { .welcome-info-grid { grid-template-columns: 1fr; } }
-.welcome-info-card { background: var(--color-surface-2); border-radius: var(--radius-lg); padding: var(--space-4); display: flex; align-items: center; gap: var(--space-3); text-align: left; }
-.welcome-info-icon { color: var(--color-primary); flex-shrink: 0; }
-.welcome-info-value { font-family: var(--font-display); font-size: var(--text-base); font-weight: 700; color: var(--color-text); }
-.welcome-info-label { font-size: var(--text-xs); color: var(--color-text-muted); }
-.welcome-tip { background: var(--color-primary-light); border-left: 3px solid var(--color-primary); padding: var(--space-3) var(--space-4); border-radius: 0 var(--radius-md) var(--radius-md) 0; font-size: var(--text-sm); color: var(--color-text-muted); text-align: left; line-height: 1.5; }
-
-/* ============================================================
-   SHARE SECTION
-   ============================================================ */
-.share-section { background: var(--color-surface-2); border-radius: var(--radius-2xl); padding: var(--space-6); margin: var(--space-8) 0 var(--space-4); text-align: center; border: 1px solid var(--color-divider); }
-.share-title { font-family: var(--font-display); font-size: var(--text-base); font-weight: 700; margin-bottom: var(--space-4); }
-.share-buttons { display: flex; flex-wrap: wrap; gap: var(--space-2); justify-content: center; margin-bottom: var(--space-3); }
-.btn--share { padding: var(--space-3) var(--space-4); font-size: var(--text-sm); font-weight: 600; border-radius: var(--radius-lg); border: none; display: inline-flex; align-items: center; gap: var(--space-2); cursor: pointer; transition: all var(--transition-fast); }
-.btn--whatsapp { background: #25d366; color: white; }
-.btn--whatsapp:hover { background: #1da851; }
-.btn--linkedin { background: #0077b5; color: white; }
-.btn--linkedin:hover { background: #005885; }
-.btn--copy { background: var(--color-surface); color: var(--color-text); border: 1.5px solid var(--color-border); }
-.btn--copy:hover { background: var(--color-surface-offset); }
-.share-challenge { font-size: var(--text-sm); color: var(--color-text-muted); margin: 0; font-style: italic; }
-
-/* ============================================================
-   COUNTER ANIMATION
-   ============================================================ */
-.counter { font-variant-numeric: tabular-nums; }
-
 .reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s cubic-bezier(0.16,1,0.3,1), transform .6s cubic-bezier(0.16,1,0.3,1); }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 .dim-icon svg { display: block; }
@@ -531,12 +481,12 @@ button { cursor: pointer; background: none; border: none; }
           </div>
           <div class="hero-stats">
             <div class="hero-stat">
-              <div class="hero-stat-value counter" data-target="847" id="diag-counter">0</div>
-              <div class="hero-stat-label">PME diagnostiquées</div>
-            </div>
-            <div class="hero-stat">
               <div class="hero-stat-value">7</div>
               <div class="hero-stat-label">Dimensions</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-value">21</div>
+              <div class="hero-stat-label">Questions</div>
             </div>
             <div class="hero-stat">
               <div class="hero-stat-value">/100</div>
@@ -646,29 +596,11 @@ button { cursor: pointer; background: none; border: none; }
   </section>
 </div>
 
-<!-- ====== VIEW: COMPANY FORM (ÉTAPE 1) ====== -->
+<!-- ====== VIEW: COMPANY FORM ====== -->
 <div id="view-form" class="view">
   <section class="quiz-view">
     <div class="container--narrow">
       <div class="company-form">
-        <!-- Progress étapes -->
-        <div class="onboarding-steps">
-          <div class="onboarding-step active" id="step-dot-1">
-            <div class="step-dot">1</div>
-            <span>Votre entreprise</span>
-          </div>
-          <div class="onboarding-step-line"></div>
-          <div class="onboarding-step" id="step-dot-2">
-            <div class="step-dot">2</div>
-            <span>Bienvenue</span>
-          </div>
-          <div class="onboarding-step-line"></div>
-          <div class="onboarding-step" id="step-dot-3">
-            <div class="step-dot">3</div>
-            <span>Diagnostic</span>
-          </div>
-        </div>
-
         <h2>Informations sur votre entreprise</h2>
         <p>Ces informations permettent de contextualiser votre diagnostic. Elles restent confidentielles.</p>
         <div class="form-grid">
@@ -722,84 +654,11 @@ button { cursor: pointer; background: none; border: none; }
           </div>
         </div>
         <div class="form-actions">
-          <button class="btn btn--primary btn--large" onclick="goToWelcome()">
-            Continuer
+          <button class="btn btn--primary btn--large" onclick="startQuiz()">
+            Commencer le diagnostic
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </button>
         </div>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- ====== VIEW: WELCOME (ÉTAPE 2) ====== -->
-<div id="view-welcome" class="view">
-  <section class="quiz-view">
-    <div class="container--narrow">
-      <div class="welcome-screen">
-        <!-- Progress étapes -->
-        <div class="onboarding-steps">
-          <div class="onboarding-step done" id="step-dot-1b">
-            <div class="step-dot">✓</div>
-            <span>Votre entreprise</span>
-          </div>
-          <div class="onboarding-step-line active"></div>
-          <div class="onboarding-step active" id="step-dot-2b">
-            <div class="step-dot">2</div>
-            <span>Bienvenue</span>
-          </div>
-          <div class="onboarding-step-line"></div>
-          <div class="onboarding-step" id="step-dot-3b">
-            <div class="step-dot">3</div>
-            <span>Diagnostic</span>
-          </div>
-        </div>
-
-        <div class="welcome-icon" id="welcome-icon">🎯</div>
-        <h2 id="welcome-title">Bienvenue !</h2>
-        <p class="welcome-subtitle" id="welcome-subtitle">Voici votre diagnostic personnalisé.</p>
-
-        <div class="welcome-info-grid">
-          <div class="welcome-info-card">
-            <div class="welcome-info-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            </div>
-            <div>
-              <div class="welcome-info-value">5 minutes</div>
-              <div class="welcome-info-label">Durée estimée</div>
-            </div>
-          </div>
-          <div class="welcome-info-card">
-            <div class="welcome-info-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-            </div>
-            <div>
-              <div class="welcome-info-value">21 questions</div>
-              <div class="welcome-info-label">Simples et directes</div>
-            </div>
-          </div>
-          <div class="welcome-info-card">
-            <div class="welcome-info-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-            </div>
-            <div>
-              <div class="welcome-info-value">Score /100</div>
-              <div class="welcome-info-label">+ Plan d'action</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="welcome-tip" id="welcome-tip">
-          💡 Répondez selon la réalité actuelle de votre entreprise, pas selon vos objectifs futurs.
-        </div>
-
-        <button class="btn btn--primary btn--large" onclick="startQuiz()" style="width:100%;justify-content:center;margin-top:var(--space-6);">
-          Lancer mon diagnostic
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </button>
-        <button class="btn btn--ghost" onclick="showView('form')" style="width:100%;justify-content:center;margin-top:var(--space-2);">
-          ← Modifier mes informations
-        </button>
       </div>
     </div>
   </section>
@@ -932,26 +791,6 @@ button { cursor: pointer; background: none; border: none; }
         </div>
       </div>
 
-      <!-- PARTAGE SOCIAL -->
-      <div class="share-section">
-        <p class="share-title">Partagez votre score et défiez votre réseau</p>
-        <div class="share-buttons">
-          <button class="btn btn--share btn--whatsapp" onclick="shareWhatsApp()">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.559 4.14 1.535 5.879L.057 23.882l6.198-1.624A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.007-1.371l-.359-.214-3.721.976.993-3.63-.234-.373A9.818 9.818 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
-            Partager sur WhatsApp
-          </button>
-          <button class="btn btn--share btn--linkedin" onclick="shareLinkedIn()">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            Partager sur LinkedIn
-          </button>
-          <button class="btn btn--share btn--copy" onclick="copyScore()">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-            Copier le lien
-          </button>
-        </div>
-        <p class="share-challenge" id="share-challenge-text"></p>
-      </div>
-
       <div class="results-actions">
         <button class="btn btn--outline btn--large" onclick="showView('landing')">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0"/><path d="M14 8l-4 4 4 4"/></svg>
@@ -993,7 +832,7 @@ button { cursor: pointer; background: none; border: none; }
     <!-- Bottom bar -->
     <div class="footer-bottom">
       <p>© 2026 NOBIRU · Conçu au Bénin 🇧🇯</p>
-      <a href="/politique-de-confidentialite.html" target="_blank">Politique de confidentialité</a>
+      <a href="#" href="/politique-de-confidentialite.html" target="_blank">Politique de confidentialité</a>
     </div>
   </div>
 </footer>
@@ -1304,7 +1143,6 @@ function showResults() {
   renderDimensionBars(computedScores, 15);
   renderRecommendations(computedScores, 15);
   renderBadges(computedScores, 15, totalScore);
-  updateShareChallenge();
 }
 
 function animateNumber(id, start, end, duration) {
@@ -1471,90 +1309,12 @@ function initScrollReveal() {
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 }
 
-
-// ====== COUNTER ANIMATION ======
-function animateCounter(el, target, duration) {
-  const start = performance.now();
-  function step(now) {
-    const elapsed = now - start;
-    const progress = Math.min(elapsed / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3);
-    el.textContent = Math.round(eased * target).toLocaleString('fr-FR');
-    if (progress < 1) requestAnimationFrame(step);
-  }
-  requestAnimationFrame(step);
-}
-
-// ====== ONBOARDING — ÉTAPE 1 → 2 ======
-const SECTOR_LABELS = {"commerce": "Commerce / Distribution", "restauration": "Restauration / Hôtellerie", "services": "Services aux entreprises", "agriculture": "Agriculture / Agro-industrie", "sante": "Santé", "education": "Éducation / Formation", "transport": "Transport / Logistique", "construction": "BTP / Construction", "tech": "Technologie / Numérique", "artisanat": "Artisanat / Production", "finance": "Finance / Assurance", "ong": "ONG / Association", "autre": "Entreprise"};
-const SECTOR_ICONS  = {"commerce": "🛍️", "restauration": "🍽️", "services": "💼", "agriculture": "🌾", "sante": "🏥", "education": "📚", "transport": "🚚", "construction": "🏗️", "tech": "💻", "artisanat": "🔨", "finance": "💰", "ong": "🤝", "autre": "🏢"};
-
-function goToWelcome() {
-  const name   = document.getElementById('company-name').value.trim();
-  const sector = document.getElementById('company-sector').value;
-  const size   = document.getElementById('company-size').value;
-  if (!name || !sector || !size) {
-    alert('Merci de remplir tous les champs obligatoires.');
-    return;
-  }
-  companyInfo = {
-    name,
-    sector,
-    size,
-    country: document.getElementById('company-country').value
-  };
-
-  const sectorLabel = SECTOR_LABELS[sector] || 'votre secteur';
-  const sectorIcon  = SECTOR_ICONS[sector]  || '🏢';
-
-  document.getElementById('welcome-icon').textContent    = sectorIcon;
-  document.getElementById('welcome-title').textContent   = 'Bienvenue, ' + name + ' !';
-  document.getElementById('welcome-subtitle').textContent =
-    'Voici votre diagnostic ' + sectorLabel + ' — 21 questions, 5 minutes.';
-
-  showView('welcome');
-}
-
-// ====== SHARE SOCIAL ======
-function getShareText() {
-  const level = MATURITY_LEVELS.find(l => totalScore >= l.min && totalScore <= l.max) || MATURITY_LEVELS[0];
-  return 'J'ai obtenu ' + totalScore + '/100 au diagnostic NOBIRU (' + level.label + '). Et toi ? 👉 nobiru.vercel.app';
-}
-
-function shareWhatsApp() {
-  const text = encodeURIComponent(getShareText());
-  window.open('https://wa.me/?text=' + text, '_blank');
-}
-
-function shareLinkedIn() {
-  const text = encodeURIComponent(getShareText());
-  const url  = encodeURIComponent('https://nobiru.vercel.app');
-  window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + url + '&summary=' + text, '_blank');
-}
-
-function copyScore() {
-  const text = getShareText();
-  navigator.clipboard.writeText(text).then(() => {
-    const btn = document.querySelector('.btn--copy');
-    btn.textContent = '✓ Copié !';
-    setTimeout(() => { btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copier le lien'; }, 2000);
-  });
-}
-
-function updateShareChallenge() {
-  const level = MATURITY_LEVELS.find(l => totalScore >= l.min && totalScore <= l.max) || MATURITY_LEVELS[0];
-  document.getElementById('share-challenge-text').textContent =
-    '"J'ai obtenu ' + totalScore + '/100 — ' + level.label + '. Et toi ?"';
-}
-
 // ====== INIT ======
 document.addEventListener('DOMContentLoaded', () => {
   drawHeroRadar();
   initScrollReveal();
-  // Compteur diagnostics
-  const counterEl = document.getElementById('diag-counter');
-  if (counterEl) animateCounter(counterEl, 847, 2000);
 });
 </script>
 </body>
 </html>
+
