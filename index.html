@@ -426,6 +426,193 @@ button { cursor: pointer; background: none; border: none; }
   .footer-brand p { max-width: 100%; }
 }
 
+// ====== ONBOARDING ======
+const SECTOR_LABELS = {
+  commerce: 'Commerce & Distribution',
+  restauration: 'Restauration & Hôtellerie',
+  services: 'Services aux entreprises',
+  sante: 'Santé & Bien-être',
+  education: 'Éducation & Formation',
+  agriculture: 'Agriculture & Agroalimentaire',
+  transport: 'Transport & Logistique',
+  tech: 'Technologie & Numérique',
+  immobilier: 'Immobilier & Construction',
+  finance: 'Finance & Assurance',
+  artisanat: 'Artisanat & Industrie',
+  autre: 'Autre secteur'
+};
+
+function showOnboardingWelcome() {
+  const name = document.getElementById('ob-firstname').value.trim();
+  const sector = document.getElementById('ob-sector').value;
+  if (!name) {
+    document.getElementById('ob-firstname').focus();
+    document.getElementById('ob-firstname').style.borderColor = 'var(--color-error)';
+    return;
+  }
+  if (!sector) {
+    document.getElementById('ob-sector').focus();
+    document.getElementById('ob-sector').style.borderColor = 'var(--color-error)';
+    return;
+  }
+  document.getElementById('ob-firstname').style.borderColor = '';
+  document.getElementById('ob-sector').style.borderColor = '';
+  document.getElementById('ob-welcome-name').textContent = name;
+  document.getElementById('ob-welcome-sector').textContent = SECTOR_LABELS[sector] || sector;
+  document.getElementById('ob-step-1').classList.add('hidden');
+  document.getElementById('ob-step-2').classList.remove('hidden');
+  document.getElementById('ob-dot-1').classList.remove('active');
+  document.getElementById('ob-dot-2').classList.add('active');
+  document.getElementById('ob-step-2').scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function backToOnboardingStep1() {
+  document.getElementById('ob-step-2').classList.add('hidden');
+  document.getElementById('ob-step-1').classList.remove('hidden');
+  document.getElementById('ob-dot-2').classList.remove('active');
+  document.getElementById('ob-dot-1').classList.add('active');
+}
+
+function proceedToForm() {
+  const name = document.getElementById('ob-firstname').value.trim();
+  const sector = document.getElementById('ob-sector').value;
+  const companyNameInput = document.getElementById('company-name');
+  const companySectorSelect = document.getElementById('company-sector');
+  if (companyNameInput && name) companyNameInput.value = name;
+  if (companySectorSelect && sector) companySectorSelect.value = sector;
+  showView('form');
+}
+
+// ====== SOCIAL SHARING ======
+function shareResults(platform) {
+  const companyName = document.getElementById('result-company-name')?.textContent || 'Mon entreprise';
+  const scoreEl = document.querySelector('.score-value');
+  const score = scoreEl ? scoreEl.textContent : '—';
+  const levelEl = document.querySelector('.maturity-badge');
+  const level = levelEl ? levelEl.textContent.trim() : '';
+  const url = window.location.href;
+  const text = `🚀 ${companyName} vient d'obtenir ${score}/100 au diagnostic de maturité digitale NOBIRU !\n\nNiveau : ${level}\n\nÉvaluez votre PME gratuitement :`
+  if (platform === 'whatsapp') {
+    window.open('https://wa.me/?text=' + encodeURIComponent(text + '\n' + url), '_blank');
+  } else if (platform === 'linkedin') {
+    window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url), '_blank');
+  }
+}
+
+function generateAndDownloadCard() {
+  const btn = document.getElementById('share-card-btn');
+  btn.disabled = true;
+  btn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation:spin 1s linear infinite"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg> Génération…`;
+
+  const canvas = document.createElement('canvas');
+  canvas.width = 1080; canvas.height = 1080;
+  const ctx = canvas.getContext('2d');
+
+  // Background gradient
+  const bg = ctx.createLinearGradient(0, 0, 1080, 1080);
+  bg.addColorStop(0, '#0e7c6e');
+  bg.addColorStop(1, '#0a5e53');
+  ctx.fillStyle = bg;
+  roundRect(ctx, 0, 0, 1080, 1080, 48);
+  ctx.fill();
+
+  // Decorative circle
+  ctx.fillStyle = 'rgba(255,255,255,0.05)';
+  ctx.beginPath();
+  ctx.arc(920, 160, 300, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.beginPath();
+  ctx.arc(160, 920, 200, 0, Math.PI * 2);
+  ctx.fill();
+
+  // Brand name
+  ctx.fillStyle = 'rgba(255,255,255,0.9)';
+  ctx.font = '700 52px "Cabinet Grotesk", sans-serif';
+  ctx.fillText('NOBIRU', 80, 120);
+
+  ctx.fillStyle = 'rgba(255,255,255,0.5)';
+  ctx.font = '400 28px "Satoshi", sans-serif';
+  ctx.fillText('Diagnostic de Maturité Digitale', 80, 165);
+
+  // Company name
+  const companyName = document.getElementById('result-company-name')?.textContent || '';
+  ctx.fillStyle = 'rgba(255,255,255,0.75)';
+  ctx.font = '500 32px "Satoshi", sans-serif';
+  ctx.fillText(companyName, 80, 260);
+
+  // Score circle background
+  ctx.fillStyle = 'rgba(255,255,255,0.12)';
+  ctx.beginPath();
+  ctx.arc(540, 520, 220, 0, Math.PI * 2);
+  ctx.fill();
+
+  // Score value
+  const scoreEl = document.querySelector('.score-value');
+  const score = scoreEl ? scoreEl.textContent : '—';
+  ctx.fillStyle = '#ffffff';
+  ctx.font = '800 180px "Cabinet Grotesk", sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillText(score, 540, 600);
+
+  ctx.fillStyle = 'rgba(255,255,255,0.6)';
+  ctx.font = '400 36px "Satoshi", sans-serif';
+  ctx.fillText('/100', 540, 660);
+
+  // Level
+  const levelEl = document.querySelector('.maturity-badge');
+  const level = levelEl ? levelEl.textContent.trim() : '';
+  ctx.fillStyle = 'rgba(255,255,255,0.9)';
+  ctx.font = '600 38px "Satoshi", sans-serif';
+  ctx.fillText(level, 540, 740);
+
+  // Dimension bars
+  const dimItems = document.querySelectorAll('.dim-score-item');
+  const barY = 820;
+  const barW = 860 / Math.max(dimItems.length, 1);
+  ctx.textAlign = 'left';
+  dimItems.forEach((item, i) => {
+    const fill = item.querySelector('.rpg-bar-fill');
+    const pct = fill ? parseFloat(fill.style.width) / 100 : 0;
+    const x = 110 + i * barW;
+    ctx.fillStyle = 'rgba(255,255,255,0.2)';
+    roundRect(ctx, x, barY, barW - 8, 12, 6);
+    ctx.fill();
+    ctx.fillStyle = 'rgba(255,255,255,0.85)';
+    roundRect(ctx, x, barY, Math.max((barW - 8) * pct, 4), 12, 6);
+    ctx.fill();
+  });
+
+  // Footer
+  ctx.fillStyle = 'rgba(255,255,255,0.4)';
+  ctx.font = '400 24px "Satoshi", sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillText('nobiru.io · Diagnostic gratuit en 5 minutes', 540, 1020);
+
+  // Download
+  const link = document.createElement('a');
+  link.download = 'diagnostic-nobiru-' + (companyName.toLowerCase().replace(/\s+/g, '-') || 'resultats') + '.png';
+  link.href = canvas.toDataURL('image/png');
+  link.click();
+
+  btn.disabled = false;
+  btn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Télécharger la carte`;
+}
+
+function roundRect(ctx, x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.lineTo(x + w - r, y);
+  ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+  ctx.lineTo(x + w, y + h - r);
+  ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+  ctx.lineTo(x + r, y + h);
+  ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+  ctx.lineTo(x, y + r);
+  ctx.quadraticCurveTo(x, y, x + r, y);
+  ctx.closePath();
+}
+
+
 /* ============================================
    SCROLL REVEAL
    ============================================ */
@@ -1317,4 +1504,3 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 </body>
 </html>
-
